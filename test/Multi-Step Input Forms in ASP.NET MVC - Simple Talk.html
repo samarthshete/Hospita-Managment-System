@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="v4FeIuwXgEi2SrU3GYFHMTLZhMn2CEi1Tk4MT7LN_lc">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/305265.js.download" type="text/javascript" id="hs-script-loader"></script><script type="text/javascript" async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/heap-3441118981.js.download"></script><script async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/saved_resource"></script><script id="hs-analytics" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/305265.js(1).download"></script><script type="text/javascript" async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/cse.js.download"></script><script async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/gtm.js.download"></script><script>dataLayer = [];</script>
+
+	<script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/authentication.min.js.download"></script>
+	<script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/synchroniseidentity.js.download"></script>
+
+		<title>Multi-Step Input Forms in ASP.NET MVC - Simple Talk</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v6.1.1 - https://yoa.st/1yg?utm_content=6.1.1 -->
+<meta name="description" content="It is a common problem with a web page that a form is too complex to fit easily on the page. You can, of course, rely on the scrollbar, but it soon becomes a daunting and erratic process for the poor user. Wizards, that allow you to guide the user through a process, are great but take time to set up. Is there a simple solution for those occasions where there is too much data-entry for a form but a full wizard seems like overkill?">
+<link rel="canonical" href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/">
+<link rel="publisher" href="https://plus.google.com/+Simple-talk/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-Step Input Forms in ASP.NET MVC - Simple Talk">
+<meta property="og:description" content="It is a common problem with a web page that a form is too complex to fit easily on the page. You can, of course, rely on the scrollbar, but it soon becomes a daunting and erratic process for the poor user. Wizards, that allow you to guide the user through a process, are great but take time to set up. Is there a simple solution for those occasions where there is too much data-entry for a form but a full wizard seems like overkill?">
+<meta property="og:url" content="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/">
+<meta property="og:site_name" content="Simple Talk">
+<meta property="article:section" content="ASP.NET">
+<meta property="article:published_time" content="2016-09-16T12:51:01+00:00">
+<meta property="article:modified_time" content="2016-10-20T17:19:56+00:00">
+<meta property="og:updated_time" content="2016-10-20T17:19:56+00:00">
+<meta property="og:image" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-367.png">
+<meta property="og:image:secure_url" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-367.png">
+<meta property="og:image" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-368.png">
+<meta property="og:image:secure_url" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-368.png">
+<meta property="og:image" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-369.png">
+<meta property="og:image:secure_url" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-369.png">
+<meta property="og:image" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-370.png">
+<meta property="og:image:secure_url" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-370.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="It is a common problem with a web page that a form is too complex to fit easily on the page. You can, of course, rely on the scrollbar, but it soon becomes a daunting and erratic process for the poor user. Wizards, that allow you to guide the user through a process, are great but take time to set up. Is there a simple solution for those occasions where there is too much data-entry for a form but a full wizard seems like overkill?">
+<meta name="twitter:title" content="Multi-Step Input Forms in ASP.NET MVC - Simple Talk">
+<meta name="twitter:site" content="@simple_talk">
+<meta name="twitter:image" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/09/word-image-367.png">
+<meta name="twitter:creator" content="@simple_talk">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.red-gate.com\/simple-talk\/","name":"Simple Talk","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.red-gate.com\/simple-talk\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Simple Talk » Feed" href="https://www.red-gate.com/simple-talk/feed/">
+<link rel="alternate" type="application/rss+xml" title="Simple Talk » Comments Feed" href="https://www.red-gate.com/simple-talk/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Simple Talk » Multi-Step Input Forms in ASP.NET MVC Comments Feed" href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.red-gate.com\/simple-talk\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wgs-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/wgs.css" type="text/css" media="all">
+<link rel="stylesheet" id="wgs2-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/wgs2.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-vs2012-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/vs2012.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-courier-new-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/courier-new.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="post-views-counter-frontend-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="cbxwpbookmarkpublic-css-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/cbxwpbookmark-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="yasrcss-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/yasr.css" type="text/css" media="all">
+<style id="yasrcss-inline-css" type="text/css">
+
+			.rateit .rateit-range {
+				background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_16.png ) left 0px;
+			}
+
+			.rateit .rateit-hover {
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_16.png ) left -21px;
+			}
+
+			.rateit .rateit-selected {
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_16.png ) left -42px;
+			}
+
+			div.medium .rateit-range {
+			    /*White*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_24.png ) left 0px;
+			}
+
+			div.medium .rateit-hover {
+			    /*Red*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_24.png ) left -29px;
+			}
+
+			div.medium .rateit-selected {
+			    /*Yellow*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_24.png ) left -58px ;
+			}
+
+			/* Creating set 32 */
+
+			div.bigstars .rateit-range {
+			    /*White*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_32.png ) left 0px ;
+			}
+
+			div.bigstars .rateit-hover{
+			    /*red*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_32.png ) left -37px ;
+			}
+
+			div.bigstars .rateit-selected
+			{
+			    /*Gold*/
+			    background: url(https://www.red-gate.com/simple-talk/wp-content/uploads/yasr/rg/stars_32.png ) left -74px ;
+			}
+
+		
+</style>
+<link rel="stylesheet" id="jquery-ui-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jquery-ui.css" type="text/css" media="all">
+<link rel="stylesheet" id="yasrcsslightscheme-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/yasr-table-light.css" type="text/css" media="all">
+<link rel="stylesheet" id="simpletalk-style-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var cbxwpbookmark = {"ajaxurl":"https:\/\/www.red-gate.com\/simple-talk\/wp-admin\/admin-ajax.php","nonce":"558bf3426a","cat_template":"\"\\r\\n            <div class=\\\"cbxbookmark-mycat-editbox\\\">\\r\\n\\r\\n                <input class=\\\"cbxbmedit-catname\\\" name=\\\"catname\\\" value=\\\"##catname##\\\" \\\/>                \\r\\n                <select class=\\\"cbxbmedit-privacy input-catprivacy\\\" name=\\\"catprivacy\\\">\\r\\n                  <option value=\\\"1\\\">Public<\\\/option>\\r\\n                  <option value=\\\"0\\\">Private<\\\/option>  \\r\\n                <\\\/select>\\r\\n                <a href=\\\"#\\\" class=\\\"cbxbookmark-btn cbxbookmark-cat-save\\\">Update <span class=\\\"cbxbm_busy\\\" style=\\\"display:none;\\\"><\\\/span><\\\/a>\\r\\n                <a href=\\\"#\\\" class=\\\"cbxbookmark-btn cbxbookmark-cat-close\\\">Close<\\\/a>\\r\\n            <\\\/div>\"","category_delete_success":"Category deleted successfully","category_delete_error":"Unable to delete the category","areyousuretodeletecat":"Are you sure you want to delete this Bookmark Category?","areyousuretodeletebookmark":"Are you sure you want to delete this Bookmark?","bookmark_failed":"Faild to Bookmark","bookmark_removed":"Bookmark Removed"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/cbxwpbookmark-public.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sendyOptions = {"ajaxUrl":"https:\/\/www.red-gate.com\/simple-talk\/wp-admin\/admin-ajax.php","lists":{".NET newsletter":"WP0iWal3XRl7637634pL0QAowg","Simple Talk":"Ww0i892QBs90gtk8qJjIW87g"},"is_user_logged_in":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/st-sendy.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.red-gate.com/simple-talk/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.red-gate.com/simple-talk/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.red-gate.com/simple-talk/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.2">
+<link rel="shortlink" href="https://www.red-gate.com/simple-talk/?p=68128">
+<link rel="alternate" type="application/json+oembed" href="https://www.red-gate.com/simple-talk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.red-gate.com%2Fsimple-talk%2Fdotnet%2Fasp-net%2Fmulti-step-input-forms-asp-net-mvc%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.red-gate.com/simple-talk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.red-gate.com%2Fsimple-talk%2Fdotnet%2Fasp-net%2Fmulti-step-input-forms-asp-net-mvc%2F&amp;format=xml">
+<link rel="icon" href="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/07/gatebase-favicon.png" sizes="32x32">
+<link rel="icon" href="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/07/gatebase-favicon.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/07/gatebase-favicon.png">
+<meta name="msapplication-TileImage" content="https://www.red-gate.com/simple-talk/wp-content/uploads/2016/07/gatebase-favicon.png">
+ <script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jsapi" type="text/javascript"></script><link type="text/css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/default+en.css" rel="stylesheet"><link type="text/css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/minimalist.css" rel="stylesheet"><script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/default+en.I.js.download"></script><style type="text/css">.gsc-control-cse{font-family:Arial, sans-serif;border-color:#FFFFFF;background-color:#FFFFFF}.gsc-control-cse .gsc-table-result{font-family:Arial, sans-serif}input.gsc-input{border-color:#BBBBBB}input.gsc-search-button{border-color:#000000;background-color:#333333}.gsc-tabHeader.gsc-tabhInactive{border-color:#777777;background-color:#777777}.gsc-tabHeader.gsc-tabhActive{border-color:#333333;background-color:#333333}.gsc-tabsArea{border-color:#333333}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result.gsc-promotion:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#444444}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#444444}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#444444}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#777777}.gsc-cursor-page{color:#444444}a.gsc-trailing-more-results:link{color:#444444}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#333333}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#000000}.gs-webResult div.gs-visibleUrl-short{color:#000000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#777777;background-color:#FFFFFF;color:#444444}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#333333;background-color:#333333;color:#444444}.gsc-webResult.gsc-result.gsc-promotion{border-color:#CCCCCC;background-color:#E6E6E6}.gsc-completion-title{color:#444444}.gsc-completion-snippet{color:#333333}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#444444}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#00CC00}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#333333}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#00CC00}</style><script type="text/javascript" async="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/embed.js.download"></script><script async="" type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/count.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.b6e30194f7733461731644bd3f145d25.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.8edffe1405dcc2d5eb5ee9d96a2866d1.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.342b5faf46965f49ac9c7cedecb8f3e2.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/count-data.js.download"></script></head>
+
+<body class="post-template-default single single-post postid-68128 single-format-standard wp-custom-logo grid" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+	<!-- Google Tag Manager -->
+	<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-N5S5ZL"
+	height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N5S5ZL');</script>
+	<!-- End Google Tag Manager -->
+
+	
+
+<header class="band header--primary js-header-primary-collapse header--primary--collapsed"><div class="header--primary__container">
+    <nav>
+		<a href="https://www.red-gate.com/" class="header--primary__app-logo-container"><img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/redgate-logo--white.svg" alt="Redgate logo" width="94" height="23"></a>
+
+        <span class="hide-on-large">
+            <ul class="header__nav">
+    			<li><a href="https://www.red-gate.com/products/">Products</a>
+    <ul>
+        <li>
+            <a href="https://www.red-gate.com/products/#sql-server" class="js-scroll-to" data-scroll-to-offset="-70">SQL Server</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-toolbelt">SQL Toolbelt</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-compare">SQL Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-data-compare">SQL Data Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-source-control/">SQL Source Control</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-prompt">SQL Prompt</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-monitor">SQL Monitor</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-provision">SQL Provision</a></li>
+                <li><a href="https://www.red-gate.com/products/dlm/dlm-automation/">DLM Automation</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-clone">SQL Clone</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-data-masker">SQL Data Masker</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-backup">SQL Backup Pro</a></li>
+                <li><a href="https://www.red-gate.com/products/dlm/dlm-dashboard/">DLM Dashboard</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/readyroll/">ReadyRoll Pro</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-search/">SQL Search</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-doc">SQL Doc</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-data-generator">SQL Data Generator</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-test">SQL Test</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-dependency-tracker">SQL Dependency Tracker</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-multi-script">SQL Multi Script</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-scripts-manager">SQL Scripts Manager</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-index-manager">SQL Index Manager</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-comparison-sdk">SQL Comparison SDK</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.red-gate.com/products/#azure" class="js-scroll-to" data-scroll-to-offset="-79">Azure</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/azure-development/data-platform-studio/">Data Platform Studio</a></li>
+                <li><a href="https://www.red-gate.com/products/azure-development/azure-explorer/">Azure Explorer (free)</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.red-gate.com/products/#net" class="js-scroll-to" data-scroll-to-offset="-70">.NET</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/dotnet-developer-bundle">.NET Developer Bundle</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/ants-performance-profiler">ANTS Performance Profiler</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/ants-memory-profiler">ANTS Memory Profiler</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/reflector">.NET Reflector</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/smartassembly">SmartAssembly</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/pinvoke">PInvoke .NET</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.red-gate.com/products/#oracle" class="js-scroll-to" data-scroll-to-offset="-70">Oracle</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/oracle-development/deployment-suite-for-oracle">Deployment Suite for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/data-masker-for-oracle">Data Masker for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/schema-compare-for-oracle">Schema Compare for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/data-compare-for-oracle">Data Compare for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/source-control-for-oracle">Source Control for Oracle</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://www.red-gate.com/products/#mysql" class="js-scroll-to" data-scroll-to-offset="-70">MySQL</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-comparison-bundle">MySQL Comparison Bundle</a></li>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-compare">MySQL Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-data-compare">MySQL Data Compare</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="https://www.red-gate.com/solutions/database-devops/">Database DevOps</a>
+</li>
+<li>
+    <a href="https://www.red-gate.com/solutions/data-privacy-protection/">Data Privacy &amp; Protection</a>
+</li>
+<li><a href="https://productsupport.red-gate.com/hc">Support</a></li>
+<li>
+    <a href="https://www.red-gate.com/our-company/">Our Company</a>
+    <ul>
+        <li><a href="https://www.red-gate.com/our-company/careers/current-opportunities/">Careers</a></li>
+        <li><a href="https://www.red-gate.com/our-company/contact-us">Contact us</a></li>
+        <li><a href="https://www.red-gate.com/blog/">Redgate blog</a></li>
+    </ul>
+</li>
+<li>
+    <a href="https://www.red-gate.com/hub/" class=" active">Community Hub</a>
+    <ul>
+        <li><a href="https://www.red-gate.com/hub/product-learning">Product learning</a></li>
+        <li><a href="http://forum.red-gate.com/">Forums</a></li>
+        <li><a href="https://www.red-gate.com/hub/events/">Events &amp; groups</a></li>
+        <li><a href="https://www.red-gate.com/simple-talk/">Simple Talk</a></li>
+    </ul>
+</li>
+
+            </ul>
+        </span>
+
+        <span class="float-right header--primary__site-tools">
+            <span class="hide-on-medium header__account-container">
+        		<ul class="header__account dropdown js-dropdown" style="display: none;">
+                    <div class="show-on-small hide-on-max">
+                        <li><a href="https://www.red-gate.com/search?t=simpletalk">Search</a></li>
+                        <li><a href="https://www.red-gate.com/account/">My account</a></li>
+                        <li><a href="https://www.red-gate.com/dynamic/purchase/cart/summary?ref=account-nav">Shopping cart</a></li>
+                    </div>
+
+                    <li><a href="https://www.red-gate.com/dynamic/quotes/openquote?ref=account-nav" title="Quotes">Quotes</a></li>
+                </ul>
+            </span>
+
+            <ul class="hide-on-mini padded-left--tight">
+                <li><a href="https://www.red-gate.com/search?t=simpletalk" class="header--primary__icon icon--search"></a></li>
+                <li><a href="https://www.red-gate.com/account/" class="header--primary__icon icon--user"></a></li>
+                <li class="hide-on-medium"><a href="https://www.red-gate.com/dynamic/purchase/cart/summary?ref=account-nav" class="header--primary__icon icon--shopping-cart" title="View your shopping cart"> <span class="cart__num" data-href="https://www.red-gate.com/Dynamic/Cart/NumberOfItemsInCart"></span></a></li>
+            </ul>
+
+            <span class="hide-on-max show-on-medium">
+                <ul>
+                    <li><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#menu" class="header--primary__icon header--primary__menu-button"></a></li>
+                </ul>
+            </span>
+        </span>
+
+        
+    </nav>
+</div><span class="header--primary__menu--mobile">
+            <ul class="dropdown js-dropdown header__account--mobile">
+            </ul>
+            <ul class="js-dropdown">
+    			<li class="dropdown closed" data-arrow-added="true"><a href="https://www.red-gate.com/products/">Products</a>
+    <ul>
+        <li class="dropdown closed" data-arrow-added="true">
+            <a href="https://www.red-gate.com/products/#sql-server" class="js-scroll-to" data-scroll-to-offset="-70">SQL Server</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-toolbelt">SQL Toolbelt</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-compare">SQL Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-data-compare">SQL Data Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-source-control/">SQL Source Control</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-prompt">SQL Prompt</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-monitor">SQL Monitor</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-provision">SQL Provision</a></li>
+                <li><a href="https://www.red-gate.com/products/dlm/dlm-automation/">DLM Automation</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-clone">SQL Clone</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-data-masker">SQL Data Masker</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-backup">SQL Backup Pro</a></li>
+                <li><a href="https://www.red-gate.com/products/dlm/dlm-dashboard/">DLM Dashboard</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/readyroll/">ReadyRoll Pro</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-search/">SQL Search</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-doc">SQL Doc</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-data-generator">SQL Data Generator</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-test">SQL Test</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-dependency-tracker">SQL Dependency Tracker</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-multi-script">SQL Multi Script</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-scripts-manager">SQL Scripts Manager</a></li>
+                <li><a href="https://www.red-gate.com/products/dba/sql-index-manager">SQL Index Manager</a></li>
+                <li><a href="https://www.red-gate.com/products/sql-development/sql-comparison-sdk">SQL Comparison SDK</a></li>
+            </ul>
+        <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+        <li class="dropdown closed" data-arrow-added="true">
+            <a href="https://www.red-gate.com/products/#azure" class="js-scroll-to" data-scroll-to-offset="-79">Azure</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/azure-development/data-platform-studio/">Data Platform Studio</a></li>
+                <li><a href="https://www.red-gate.com/products/azure-development/azure-explorer/">Azure Explorer (free)</a></li>
+            </ul>
+        <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+        <li class="dropdown closed" data-arrow-added="true">
+            <a href="https://www.red-gate.com/products/#net" class="js-scroll-to" data-scroll-to-offset="-70">.NET</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/dotnet-developer-bundle">.NET Developer Bundle</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/ants-performance-profiler">ANTS Performance Profiler</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/ants-memory-profiler">ANTS Memory Profiler</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/reflector">.NET Reflector</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/smartassembly">SmartAssembly</a></li>
+                <li><a href="https://www.red-gate.com/products/dotnet-development/pinvoke">PInvoke .NET</a></li>
+            </ul>
+        <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+        <li class="dropdown closed" data-arrow-added="true">
+            <a href="https://www.red-gate.com/products/#oracle" class="js-scroll-to" data-scroll-to-offset="-70">Oracle</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/oracle-development/deployment-suite-for-oracle">Deployment Suite for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/data-masker-for-oracle">Data Masker for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/schema-compare-for-oracle">Schema Compare for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/data-compare-for-oracle">Data Compare for Oracle</a></li>
+                <li><a href="https://www.red-gate.com/products/oracle-development/source-control-for-oracle">Source Control for Oracle</a></li>
+            </ul>
+        <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+        <li class="dropdown closed" data-arrow-added="true">
+            <a href="https://www.red-gate.com/products/#mysql" class="js-scroll-to" data-scroll-to-offset="-70">MySQL</a>
+            <ul>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-comparison-bundle">MySQL Comparison Bundle</a></li>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-compare">MySQL Compare</a></li>
+                <li><a href="https://www.red-gate.com/products/mysql/mysql-data-compare">MySQL Data Compare</a></li>
+            </ul>
+        <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+    </ul>
+<a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+<li>
+    <a href="https://www.red-gate.com/solutions/database-devops/">Database DevOps</a>
+</li>
+<li>
+    <a href="https://www.red-gate.com/solutions/data-privacy-protection/">Data Privacy &amp; Protection</a>
+</li>
+<li><a href="https://productsupport.red-gate.com/hc">Support</a></li>
+<li class="dropdown closed" data-arrow-added="true">
+    <a href="https://www.red-gate.com/our-company/">Our Company</a>
+    <ul>
+        <li><a href="https://www.red-gate.com/our-company/careers/current-opportunities/">Careers</a></li>
+        <li><a href="https://www.red-gate.com/our-company/contact-us">Contact us</a></li>
+        <li><a href="https://www.red-gate.com/blog/">Redgate blog</a></li>
+    </ul>
+<a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+<li class="dropdown closed" data-arrow-added="true">
+    <a href="https://www.red-gate.com/hub/" class=" active">Community Hub</a>
+    <ul>
+        <li><a href="https://www.red-gate.com/hub/product-learning">Product learning</a></li>
+        <li><a href="http://forum.red-gate.com/">Forums</a></li>
+        <li><a href="https://www.red-gate.com/hub/events/">Events &amp; groups</a></li>
+        <li><a href="https://www.red-gate.com/simple-talk/">Simple Talk</a></li>
+    </ul>
+<a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#toggle" class="arrow"></a></li>
+
+            </ul>
+        </span></header>
+	<nav class="nav-bar nav-bar--dark nav-bar--has-captions clearfix padded-left--tight text--center">
+    <h1 class="nav-bar__heading">
+        <a href="https://www.red-gate.com/hub/">
+            <img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/redgate-logo--white.svg" alt="Redgate logo" width="94" height="23"> 
+			Hub
+        </a>
+    </h1>
+
+    <ul class="float-right">
+        <li><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#menu" class="nav-bar__menu-button  icon--chevron-down"></a></li>
+    </ul>
+
+    <ul class="hide-on-large">
+        <li><a href="https://www.red-gate.com/hub/product-learning/">Product learning <span>Tips and how-to guides</span></a></li>
+        <li><a href="http://forum.red-gate.com/">Product forums <span>Ask, discuss, solve</span></a></li>
+        <li><a href="https://www.red-gate.com/hub/events/">Events &amp; Friends <span>Meet us and join in</span></a></li>
+        <li class="active"><a href="https://www.red-gate.com/simple-talk/">Simple Talk <span>Articles &amp; opinion</span></a></li>
+    </ul>
+</nav>	
+	<nav class="site-nav">
+		<nav class="nav-bar">
+			<div class="band__inner-container padded--none">
+				<ul id="menu-secondary-nav" class="site-nav"><li id="menu-item-71639" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-71639"><a href="https://www.red-gate.com/simple-talk/">Home</a></li>
+<li id="menu-item-20429" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20429"><a href="https://www.red-gate.com/simple-talk/sql/">SQL</a></li>
+<li id="menu-item-20427" class="active menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-20427"><a href="https://www.red-gate.com/simple-talk/dotnet/">.NET</a></li>
+<li id="menu-item-20428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20428"><a href="https://www.red-gate.com/simple-talk/cloud/">Cloud</a></li>
+<li id="menu-item-20430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20430"><a href="https://www.red-gate.com/simple-talk/sysadmin/">Sysadmin</a></li>
+<li id="menu-item-20431" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20431"><a href="https://www.red-gate.com/simple-talk/opinion/">Opinion</a></li>
+<li id="menu-item-20433" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20433"><a href="https://www.red-gate.com/simple-talk/books/">Books</a></li>
+<li id="menu-item-20432" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20432"><a href="https://www.red-gate.com/simple-talk/blogs/">Blogs</a></li>
+</ul>
+				<!-- Account nav -->
+				<ul class="site-nav__account hide-on-medium">
+											<li>
+							<a href="https://www.red-gate.com/simple-talk/account/log-in">Log in</a>
+						</li>
+						<li>
+							<a href="https://www.red-gate.com/simple-talk/account/sign-up">Sign up</a>
+						</li>
+										<li>
+						<a href="https://www.red-gate.com/simple-talk/feed/" class="icon--rss" title="Simple Talk RSS feed">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</nav>
+
+<div class="content-wrapper" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/TechArticle">
+	<div class="band__inner-container padded-bottom--none">
+		<div class="padded-h--tight">
+			<div class="grid__row">
+				
+<!-- Desktop-width article meta column -->
+<div class="article__meta grid__col grid__col--span-2-of-12 hide-on-medium">
+	<div class="article__author" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+		<div class="avatars">		<a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" class="avatar">
+			<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/ace158af8dfab0e682dcc70d965514e5" width="80" height="80" alt="" class="avatar-80wp-user-avatar wp-user-avatar-80 alignnone photo avatar-default">		</a>
+	</div>
+<a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" title="Posts by Dino Esposito" class="author url fn" rel="author">Dino Esposito</a>	</div>
+
+	<p class="article__date spaced-bottom--none updated published" itemprop="datePublished" content="2016-09-16">16 September 2016</p>
+	
+	<ul class="list--bare">
+
+		<!-- Rating -->
+		<li class="article__meta__votes">
+			
+    <!-- ST Yasr Visitor Votes Readonly Shortcode -->
+    <div id="yasr_visitor_votes_readonly_68128" class="yasr-visitor-votes_readonly"><div class="rateit yasr_visitor_votes_stars_div" id="yasr_rateit_visitor_votes_readonly_68128" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-value="4.2" data-rateit-step="1" data-rateit-resetable="false" data-rateit-readonly="true"><button id="rateit-reset-2" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-2" style="display: none;"></button><div id="rateit-range-2" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-2" aria-valuemin="0" aria-valuemax="5" aria-valuenow="4.181818181818182" aria-readonly="true" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 66.9091px;"></div><div class="rateit-hover" style="height:16px"></div></div></div></div>
+    <!-- End ST Yasr Visitor Votes Readonly Shortcode -->
+    			<span class="article__meta__vote-count">
+				33			</span>
+		</li>
+
+		<!-- Post view count -->
+		<li class="article__meta__post-views">
+			<p><strong>25231</strong> <small>views</small></p>		</li>
+
+		<!-- Bookmarks -->
+		
+		<!-- Disqus -->
+		<li>
+			<a class="article__meta__comments" alt="Comments" title="Comments" href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#comments"><p><span class="comment-counter disqus-comment-count" itemprop="commentCount" data-disqus-identifier="68128 https://www.simple-talk.com/?p=68128">5</span></p></a>		</li>
+
+		<!-- Sharing -->
+		<li class="padded-top--tight">
+			
+<ul class="sharing">
+	<li class="spaced-bottom--none"><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/?view=print" id="social-share-print" class="sharing__link sharing__link--print" title="Printer friendly version"><img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/print.png" alt="Printer friendly version"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-email" class="sharing__link sharing__link--email" title="Email" href="mailto:?subject=Article%20on%20https://www.red-gate.com/simple-talk:%20Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC&amp;body=I%20found%20this%20great%20article%20on%20https://www.red-gate.com/simple-talk.%0D%0A%0D%0AIt%27s%20called%20Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC.%0D%0A%0D%0AYou%20can%20find%20it%20here%20https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/."></a></li>
+
+	<li class="spaced-bottom--none"><a id="social-share-twitter" class="sharing__link sharing__link--twitter" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/&amp;text=Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC%20@simple_talk"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-facebook" class="sharing__link sharing__link--facebook" title="Facebook" target="_blank" href="https://facebook.com/sharer.php?u=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-google-plus" class="sharing__link sharing__link--google-plus" title="Google Plus" target="_blank" href="https://plus.google.com/share?url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-linked-in" class="sharing__link sharing__link--linked-in" title="LinkedIn" target="_blank" href="https://linkedin.com/shareArticle?mini=true&amp;url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- Main column -->
+<div class="grid__col grid__col--span-7-of-12 grid__col--span-10-of-12--large grid__col--span-12-of-12--small">
+	<article class="article post-68128 post type-post status-publish format-standard hentry category-asp-net" itemscope="" itemtype="http://schema.org/Article">
+
+			<nav class="breadcrumbs show-on-medium hide-on-max">
+		<ul class="spaced-bottom--none">
+			<li><a href="https://www.red-gate.com/">Home</a></li>
+
+											<li>
+											<a href="https://www.red-gate.com/simple-talk/dotnet/">
+					
+						.NET
+											</a>
+									</li>
+											<li>
+											<a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/">
+					
+						ASP.NET
+											</a>
+									</li>
+			
+							<li>Multi-Step Input Forms in ASP.NET MVC</li>
+					</ul>
+	</nav>
+		<div class="hide-on-max show-on-medium">
+			<!-- Author -->
+			<div class="article__author" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+				<div class="avatars">		<a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" class="avatar">
+			<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/ace158af8dfab0e682dcc70d965514e5" width="80" height="80" alt="" class="avatar-80wp-user-avatar wp-user-avatar-80 alignnone photo avatar-default">		</a>
+	</div>
+<a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" title="Posts by Dino Esposito" class="author url fn" rel="author">Dino Esposito</a>			</div>
+
+			<!-- Date -->
+			<p class="article__date spaced-bottom--none updated published" itemprop="datePublished" content="2016-09-16">16 September 2016</p>
+			<div class="padded-v--tight clearfix">
+				<!-- Post view count -->
+				<span class="article__meta__post-views">
+					<p><strong>25231</strong> <small>views</small></p>				</span>
+
+				<!-- Rating -->
+				<span class="article__meta__votes">
+					
+    <!-- ST Yasr Visitor Votes Readonly Shortcode -->
+    <div id="yasr_visitor_votes_readonly_68128" class="yasr-visitor-votes_readonly"><div class="rateit yasr_visitor_votes_stars_div" id="yasr_rateit_visitor_votes_readonly_68128" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-value="4.2" data-rateit-step="1" data-rateit-resetable="false" data-rateit-readonly="true"><button id="rateit-reset-3" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-3" style="display: none;"></button><div id="rateit-range-3" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-3" aria-valuemin="0" aria-valuemax="5" aria-valuenow="4.181818181818182" aria-readonly="true" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 66.9091px;"></div><div class="rateit-hover" style="height:16px"></div></div></div></div>
+    <!-- End ST Yasr Visitor Votes Readonly Shortcode -->
+    					<span class="article__meta__vote-count">
+						33					</span>
+				</span>
+
+
+				<!-- Disqus -->
+				<a class="article__meta__comments" alt="Comments" title="Comments" href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/#comments"><p><span class="comment-counter disqus-comment-count" itemprop="commentCount" data-disqus-identifier="68128 https://www.simple-talk.com/?p=68128">5</span></p></a>			</div>
+		</div>
+
+
+		<h1 itemprop="name">Multi-Step Input Forms in ASP.NET MVC</h1><div class="article__excerpt"><p>It is a common problem with a web page that a form is too complex to fit  easily on the page. You can, of course, rely on the scrollbar, but it soon becomes a daunting and erratic process for the poor user.  Wizards, that allow you to guide the user through a process, are great but take time to set up. Is there a simple solution for those occasions where there is too much data-entry for a form but a full wizard seems like overkill?</p>
+</div>
+
+		
+			<div class="article__content">
+				<p>Nowadays, a common problem in web form design comes when you are implementing web application that requires the user to provide a large amount of data. You can, of course, provide a long scrollable HTML form but the users are unlikely to appreciate it because they have to scroll up and down between fields. Sometimes they will lose the focus and forget what they just typed. Occasionally, they will mistype values and get caught by arcane validation rules that make it difficult for them to correct the error. This can be horrible for them when the rules governing the way that data to be entered is quite strict and some data influences what has to be entered later.</p>
+<p>For all these reasons, a single huge form is never a good idea. Stepped forms, also known as wizards are a much better practice of web forms design. A stepped input form allows us to break up large data input tasks into smaller pieces so that users face just one page at a time. For the user, the amount of information to enter remains the same but the overall process is smoother and much more manageable. In this article, I’ll discuss a couple of ways to implement a stepped form in ASP.NET MVC.</p>
+<h2>Using Bootstrap Tabs</h2>
+<p>The simplest way to implement a stepped form is to use a variation of the Bootstrap’s tab component. You just split all the input fields that would go in the form into a number of tabs and let Bootstrap render them. The figure below provides a glimpse of the final result you aim at.</p>
+<p>
+<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/word-image-367.png" height="378" width="548"></p>
+<p>Users will see a classic tab strip where each pane contains a section of the original input form. In this way, users can focus on a small chunk of information at a time and have nearly no need to scroll the browser window up and down.</p>
+<p>It is worth noting that at the HTML level there’s just one form to post data to the server. The overall markup you need to employ is shaped as below.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebaad196886667" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -26px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-5" style="height: 15px;">5</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-6" style="height: 15px;">6</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-7" style="height: 15px;">7</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-8" style="height: 15px;">8</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-9" style="height: 15px;">9</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-10" style="height: 15px;">10</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-11" style="height: 15px;">11</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-12" style="height: 15px;">12</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-13" style="height: 15px;">13</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-14" style="height: 15px;">14</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-15" style="height: 15px;">15</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-16" style="height: 15px;">16</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-17" style="height: 15px;">17</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-18" style="height: 15px;">18</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-19" style="height: 15px;">19</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-20" style="height: 15px;">20</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-21" style="height: 15px;">21</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-22" style="height: 15px;">22</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-23" style="height: 15px;">23</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-24" style="height: 15px;">24</div><div class="crayon-num" data-line="crayon-5a7077d9ebaad196886667-25" style="height: 15px;">25</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-1"><span class="crayon-r ">&lt;form </span><span class="crayon-e ">method</span><span class="crayon-o">=</span><span class="crayon-s ">"post"</span><span class="crayon-h"> </span><span class="crayon-e ">action</span><span class="crayon-o">=</span><span class="crayon-s ">"..."</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"wizard"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">&lt;!-- Tabstrip --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;ul </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"nav nav-tabs"</span><span class="crayon-h"> </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"tablist"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"presentation"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"active"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"#personal"</span><span class="crayon-h"> </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"tab"</span><span class="crayon-h"> </span><span class="crayon-e ">data-toggle</span><span class="crayon-o">=</span><span class="crayon-s ">"tab"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">You</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"presentation"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"#hobbies"</span><span class="crayon-h"> </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"tab"</span><span class="crayon-h"> </span><span class="crayon-e ">data-toggle</span><span class="crayon-o">=</span><span class="crayon-s ">"tab"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Hobbies</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/ul&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-13">&nbsp;</div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">&lt;!-- Tab panes --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"tab-content"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"tabpanel"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"tab-pane active"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"personal"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- Input fields --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-19"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">role</span><span class="crayon-o">=</span><span class="crayon-s ">"tabpanel"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"tab-pane"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"hobbies"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-20"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- Input fields --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-22"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-23"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-24"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaad196886667-25"><span class="crayon-r ">&lt;/form&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p></p>
+<p>A FORM element surrounds the canonical Bootstrap’s tab markup. The user can freely navigate through the tabs but will still remain within the context of the same form. Because of this, it should be noted that the ID of all input fields must be unique, so as to avoid issues with posted data and any client script code that you may have. As obvious as it may sound, the rule of having unique element IDs helps identifying each precisely and avoids nasty misbehaviors.</p>
+<p>Having said that, however, it should be recalled that a stepped form is still the same as a plain single HTML form embedded in a Razor view and processed by the ASP.NET MVC runtime engine. This means that all the rules you know from ASP.NET MVC model binding apply as usual. The figure below, for example, shows that a variable number of related strings (such as hobbies in the sample markup) once labeled with the same name attribute value can be successfully mapped to an array of strings in a ASP.NET MVC controller.</p>
+<p>
+<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/word-image-368.png" height="141" width="545"></p>
+<p>Where should you place the save button in a stepped form?</p>
+<p>The short answer is that you can place it anywhere outside the tab panes. The button should be easy to click at any time and from any stage of the wizard. My preferred position is on the same row as navigational tabs, just pushed to the corner. You can achieve the result shown in the figure above with the following markup.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebab5650020150" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-5" style="height: 15px;">5</div><div class="crayon-num" data-line="crayon-5a7077d9ebab5650020150-6" style="height: 15px;">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-1"><span class="crayon-r ">&lt;form </span><span class="crayon-e ">method</span><span class="crayon-o">=</span><span class="crayon-s ">"post"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"wizard"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;button </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"btn btn-danger pull-right"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">SAVE</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- Tabstrip --&gt;</span><span class="crayon-i "> </span></div><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-5"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebab5650020150-6"><span class="crayon-r ">&lt;/form&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>By using the Bootstrap <strong>pull-right </strong>class you instruct the browser to render the button in line with the navigational tabs, just aligned to the right edge of the container. Depending on the context, you can even add a reset button to clear all the input fields or perhaps two flavors of ‘save’ buttons: one to save and continue and one to save and finish the process.</p>
+<h2>Pros and Cons of a Bootstrap-based Solution</h2>
+<p>By using the amenities of the Bootstrap’s tab component, it is fairly straightforward to build a stepped form. You just put known chunks of markup together and ensure that everything is wrapped up in a HTML FORM element. You are free to place buttons all around to clear, save, restore the content and whatever else you wish to have.</p>
+<p>At the same time, nothing in this approach is really reusable except for the Bootstrap part of it. More importantly, there’s no easy way to force users to navigate through the panes in a fixed order. By default, tab panes are displayed all at a time and all of them are accessible. By the means of quite a bit of JavaScript code you can have all panes but the first one disabled at the beginning, or you can intercept the click event on the save button and more panes for the user to proceed with the workflow.</p>
+<p>In a nutshell, a solution entirely based on the Bootstrap’s tab component is clearly a form that is broken up into several simpler and smaller pieces but it’s not what is commonly intended in software by the term “wizard”. From the user’s perspective, a wizard is primarily a multi-step form in which every step has its own ordinal position. Navigation is always sequential, though it can proceed both forward and backward.</p>
+<p>In general terms, a Wizard is a type of stepped form. A stepped form is the combination of three logical elements: a list of panes, a list of buttons and last but not least a progress bar. I’ll return on the role (and benefits) of the progress bar in a moment. Let’s focus on some more advanced artifacts that enable sequential navigation and provide also a button bar for users to navigate and complete the workflow.</p>
+<h2>Using a Wizard Plugin</h2>
+<p>The wizard user interface is nothing new in modern software, and stepped forms are sometimes a real necessity. So it would come as no surprise that you can find a variety of wizard-like Nuget packages to choose from. A good example is the Twitter Bootstrap Wizard plugin that you can install with the following command in the package manager console.</p>
+<p>Install-Package twitter-bootstrap-wizard</p>
+<p>The nice thing about this package is that just extends the canonical structure of the Bootstrap’s tab component. In addition, it extends the core behavior of tabs, adding navigational buttons and exposing events for developers to programmatically hook into individual steps. Let’s find out more about its usage.</p>
+<p>The package is pretty slim and has no dependencies whatsoever on external packages. It also doesn’t need any CSS file; all you need to link to your Razor views is the JavaScript file. When it comes to using it, you build the tab structure of Bootstrap as the first stage. To start with, the same markup presented earlier works just fine. To add a button bar, instead, you need some extra markup.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebaba494292845" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-5" style="height: 15px;">5</div><div class="crayon-num" data-line="crayon-5a7077d9ebaba494292845-6" style="height: 15px;">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-1"><span class="crayon-r ">&lt;ul </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"pager wizard"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"previous first"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"javascript:;"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">First</span><span class="crayon-r ">&lt;/a&gt;</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"previous"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"javascript:;"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Back</span><span class="crayon-r ">&lt;/a&gt;</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"next last"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"javascript:;"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Last</span><span class="crayon-r ">&lt;/a&gt;</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"next"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"javascript:;"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Next</span><span class="crayon-r ">&lt;/a&gt;</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebaba494292845-6"><span class="crayon-r ">&lt;/ul&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p></p>
+<p>You place this markup at the bottom of the same DIV that wraps up the tab panes markup.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebabc939278188" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: auto;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebabc939278188-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebabc939278188-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebabc939278188-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebabc939278188-4" style="height: 15px;">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebabc939278188-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"tab-content"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebabc939278188-2"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-c">&lt;!-- Tab panes --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebabc939278188-3"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-c">&lt;!-- Button bar --&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebabc939278188-4"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>The final step is launching the plugin with a line of JavaScript.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebabe236269396" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebabe236269396-1" style="height: 15px;">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebabe236269396-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s ">"#wizard"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span>bootstrapWizard<span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>The #<strong>wizard</strong> selector here refers to the DIV element that contains the entire tab structure.</p>
+<p>Usually, you want to have a pair of buttons to go back (<strong>First</strong> and <strong>Back</strong>) and another pair to move forward (<strong>Last</strong> and <strong>Next</strong>). However, just because the button bar is an explicit chunk of markup it is under your total control and it can have any content that suits you. Buttons are automatically styled as in the figure below.</p>
+<p>
+<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/word-image-369.png" height="393" width="551"></p>
+<p>If you don’t like those buttons, you can replace them entirely. This is probably easier than just digging out some hidden CSS selectors and attributes to change. The official way of proceeding is to replace the UL block markup instead shown earlier with the following:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebac0429302181" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-5" style="height: 15px;">5</div><div class="crayon-num" data-line="crayon-5a7077d9ebac0429302181-6" style="height: 15px;">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"float:right"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">'button'</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'btn button-next'</span><span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">'Next'</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-3"><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-4"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"float:left"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">'button'</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'btn button-previous'</span><span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">'Back'</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac0429302181-6"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p></p>
+<p>Note that when you replace navigational buttons you also have to tell the plugin about them. To do so, it is a requirement that you add a couple of lines to the initialization of the plugin.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebac2087581826" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebac2087581826-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebac2087581826-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebac2087581826-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebac2087581826-4" style="height: 15px;">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebac2087581826-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s ">'#wizard'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span>bootstrapWizard<span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac2087581826-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s ">'nextSelector'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">'.button-next'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5a7077d9ebac2087581826-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s ">'previousSelector'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">'.button-previous'</span></div><div class="crayon-line" id="crayon-5a7077d9ebac2087581826-4"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>The properties <strong>nextSelector</strong> and <strong>previousSelector</strong> indicate the CSS selectors that identify the buttons to be used to advance forward and backward. In this regard, it is important to style your buttons with <strong>button</strong>–<strong>next</strong> and <strong>button</strong>–<strong>previous</strong> or whatever other name you choose.</p>
+<h2>Beyond the Basics</h2>
+<p>The primary reason for using a wizard plugin is so you can control navigation. Therefore, the first extension is to disable the clicking on individual tabs so that users are forced to advance only using navigational buttons. For this to happen another little piece of JavaScript code should be added to the configuration of the plugin.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebac4366245294" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebac4366245294-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebac4366245294-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebac4366245294-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebac4366245294-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebac4366245294-5" style="height: 15px;">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebac4366245294-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s ">"#wizard"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span>bootstrapWizard<span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac4366245294-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span>onTabClick<span class="crayon-o">:</span><span class="crayon-h"> </span>function<span class="crayon-h"> </span><span class="crayon-sy">(</span>tab<span class="crayon-sy">,</span><span class="crayon-h"> </span>navigation<span class="crayon-sy">,</span><span class="crayon-h"> </span>index<span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac4366245294-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>return<span class="crayon-h"> </span>false<span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a7077d9ebac4366245294-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a7077d9ebac4366245294-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p></p>
+<p>Because the plugin of choice relies heavily on the Bootstrap infrastructure it doesn’t have much control over the rendering of the tabs. The best we can do here is therefore to swallow the click event and pretend it never happened. That’s precisely the purpose of the code above. The <strong>onTabClick</strong> event fires when the user clicks any of the Bootstrap top-level tabs. The event passes three types of information to the handler code. The tab parameter is a reference to the jQuery object on top of the current tab. The navigation parameter points to the entire tab strip. Finally, the index parameter is the zero-based index of the current tab from where the user is trying to navigate away. By simply returning false from the handler, you stop the bubbling of the event and the clicked tab won’t be selected.</p>
+<p>Another common behavior one would expect from a wizard is the validation of content across consecutive steps. In other words, users should be able to proceed to the next step if some content they entered is insufficient or invalid. Again, it’s all a matter of adding some JavaScript code. In particular, you handle the <strong>onNext</strong> event which fires whenever the user clicks the <strong>Next</strong> button.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a7077d9ebac6587219106" class="crayon-syntax crayon-theme-vs2012 crayon-font-courier-new crayon-os-pc print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="margin-left: -19px;">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-1" style="height: 15px;">1</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-2" style="height: 15px;">2</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-3" style="height: 15px;">3</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-4" style="height: 15px;">4</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-5" style="height: 15px;">5</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-6" style="height: 15px;">6</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-7" style="height: 15px;">7</div><div class="crayon-num" data-line="crayon-5a7077d9ebac6587219106-8" style="height: 15px;">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-1"><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s ">"#wizard"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span>bootstrapWizard<span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span>onNext<span class="crayon-o">:</span><span class="crayon-h"> </span>function<span class="crayon-h"> </span><span class="crayon-sy">(</span>tab<span class="crayon-sy">,</span><span class="crayon-h"> </span>navigation<span class="crayon-sy">,</span><span class="crayon-h"> </span>index<span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>if<span class="crayon-h"> </span><span class="crayon-sy">(</span>index<span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span>0<span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-h"> </span>Validate<span class="crayon-h"> </span>content<span class="crayon-h"> </span>of<span class="crayon-h"> </span>tab<span class="crayon-h"> </span>and<span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-h"> </span>return<span class="crayon-h"> </span>false<span class="crayon-h"> </span>to<span class="crayon-h"> </span>prevent<span class="crayon-h"> </span>navigation<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a7077d9ebac6587219106-8"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p></p>
+<p>You use the value of the index parameter to figure out the tab the user is trying to navigate away. You validate the content in the related form fields and decide whether navigation is allowed or not. If not, you return <strong>false</strong> from the handler. At the same time, you can use any of the collected information to update any of the subsequent tabs. There’s nothing you do here in any sort of declarative manner; it’s all about using JavaScript and selectors to retrieve and update markup elements as appropriate.</p>
+<h2>Additional Tips for Stepped Forms</h2>
+<p>From a user experience perspective, stepped forms are ideal for certain tasks such as a checkout or sign-up procedure. The longer the workflow the more a stepped form is the way to go. UX experts, though, recommend you apply a few tricks to make it even easier for the user. First off, in a stepped form you should try to be friendly to users more than in any other type of user interface. You’re driving users through a long and important workflow; you’re asking many questions and requesting a lot of data. Emphasizing the benefits and explaining why that data is required helps the users to persevere. Of course, it is best to limit as much as possible the amount of data to enter.</p>
+<p>However, among the UX best practices for stepped forms, there’s one that becomes a requirement when the number of tabs is greater than three. In the UX lingo it is often called the “completeness meter” pattern. In spite of the fancy name, it is quite simple and common-sense: just add a graphical meter that tells users how much they did in the procedure. The figure below shows the sample stepped form we considered so far with a Bootstrap progress bar added.</p>
+<p>
+<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/word-image-370.png" height="371" width="548"></p>
+<p>It is up to you how you advance the meter. You can opt for a linear calculation based on the current index and the total number of steps (as in the figure) or you can opt for a more sophisticated algorithm that counts the business relevance of the amount of information users already entered. Guessing the most likely content is a way to do it. Also, the horizontal progress bar is just one graphical artifact; circle bars or plain numbers are good as well. What matters is that you let users know where they are and how much they have done or are left to do.</p>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org\/","@type":"BlogPosting","datePublished":"2016-09-16T12:51:01+00:00","headline":"Multi-Step Input Forms in ASP.NET MVC","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.red-gate.com\/simple-talk\/dotnet\/asp-net\/multi-step-input-forms-asp-net-mvc\/"},"author":{"@type":"Person","name":"Dino Esposito"},"publisher":{"@type":"Organization","name":"Simple Talk","logo":{"@type":"ImageObject","url":"https:\/\/www.simple-talk.com\/wp-content\/uploads\/2016\/07\/gatebase-favicon.png","width":300,"height":300}},"dateModified":"2016-10-20T17:19:56+00:00","image":{"@type":"ImageObject","url":"https:\/\/www.simple-talk.com\/wp-content\/uploads\/2016\/07\/gatebase-favicon.png","width":300,"height":300},"name":"Multi-Step Input Forms in ASP.NET MVC","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","ratingCount":"33"}}</script>			</div>
+			</article>
+</div>
+				<section class="sidebar grid__col grid__col--span-3-of-12 hide-on-large">
+					<div class="padded-left">
+							    <nav class="nav--vertical nav--vertical--right nav--vertical--thin">
+        <ul>
+            	<li class="cat-item cat-item-27"><a href="https://www.red-gate.com/simple-talk/dotnet/net-development/" title="Deep dives into .NET development, with detailed looks at key concepts.">.NET Development</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://www.red-gate.com/simple-talk/dotnet/net-editors-corner/" title=".NET topics from the Simple-Talk editors.">.NET Editor's Corner</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="https://www.red-gate.com/simple-talk/dotnet/net-framework/" title="Optimize the performance of the .NET Framework with detailed articles covering all aspects of .NET coding.">.NET Framework</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="https://www.red-gate.com/simple-talk/dotnet/net-performance/" title=".NET performance tips and in-depth articles to help you get the most out of the framework.">.NET Performance</a>
+</li>
+	<li class="cat-item cat-item-26"><a href="https://www.red-gate.com/simple-talk/dotnet/net-tools/" title="Articles focusing on tools and technologies to help with .NET development.">.NET Tools</a>
+</li>
+	<li class="cat-item cat-item-21 current-cat"><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/" title="Learn how to create websites and web services in Microsoft ASP.NET.">ASP.NET</a>
+</li>
+	<li class="cat-item cat-item-19699"><a href="https://www.red-gate.com/simple-talk/dotnet/c-programming/" title="Learn the C# programming language with in-depth tutorials covering all aspects of C#, including performance and testing.">C# programming</a>
+</li>
+	<li class="cat-item cat-item-50436"><a href="https://www.red-gate.com/simple-talk/dotnet/il/" title="Articles on the .NET Intermediate Language (IL).">IL</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="https://www.red-gate.com/simple-talk/dotnet/software-tools/" title="Articles on third-party tools and plugins for SQL and .NET development.">Software Tools</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="https://www.red-gate.com/simple-talk/dotnet/visual-studio/" title="Articles on working with Microsoft Visual Studio.">Visual Studio</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="https://www.red-gate.com/simple-talk/dotnet/windows-forms/" title="Articles and worked examples for creating applications with Windows Forms.">Windows Forms</a>
+</li>
+        </ul>
+    </nav>
+
+
+	
+<div class="sidebar__newsletter"><div class="newsletter-signup__sidebar">
+<h2>Subscribe for more articles</h2>
+<p class="padded-bottom--tight">Fortnightly newsletters help sharpen your skills and keep you ahead, with articles, ebooks and opinion to keep you informed.</p>
+</div>
+<div class="newsletter-signup__post-article">
+<h3>Subscribe to our fortnightly newsletter</h3>
+</div>
+<form method="post" action="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/" class="newsletter-signup"><ul class="list--bare padded-bottom--tight subscription-controls"><li><input type="checkbox" class="hc-checkbox subscription-control" name="newsletters[]" id="form-1--list-WP0iWal3XRl7637634pL0QAowg" value="WP0iWal3XRl7637634pL0QAowg"> <label class="hc-checkbox hc-checkbox--small" for="form-1--list-WP0iWal3XRl7637634pL0QAowg"><span>.NET newsletter</span></label></li><li><input type="checkbox" class="hc-checkbox subscription-control" name="newsletters[]" id="form-1--list-Ww0i892QBs90gtk8qJjIW87g" value="Ww0i892QBs90gtk8qJjIW87g"> <label class="hc-checkbox hc-checkbox--small" for="form-1--list-Ww0i892QBs90gtk8qJjIW87g"><span>Simple Talk</span></label></li></ul><label for="email">Email</label><input type="email" id="email"><input type="submit" value="Subscribe"></form></div>					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="grid__row">
+	
+<div class="band__inner-container">
+	<div class="grid__row article__footer">
+
+		<!-- Desktop-width article meta column -->
+		<div class="article__meta grid__col grid__col--span-2-of-12 hide-on-medium">
+			<ul class="list--bare">
+
+				<!-- Rating -->
+				<li class="article__meta__votes">
+					
+    <!-- ST Yasr Visitor Votes Readonly Shortcode -->
+    <div id="yasr_visitor_votes_readonly_68128" class="yasr-visitor-votes_readonly"><div class="rateit yasr_visitor_votes_stars_div" id="yasr_rateit_visitor_votes_readonly_68128" data-rateit-starwidth="16" data-rateit-starheight="16" data-rateit-value="4.2" data-rateit-step="1" data-rateit-resetable="false" data-rateit-readonly="true"><button id="rateit-reset-4" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-4" style="display: none;"></button><div id="rateit-range-4" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-4" aria-valuemin="0" aria-valuemax="5" aria-valuenow="4.181818181818182" aria-readonly="true" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 66.9091px;"></div><div class="rateit-hover" style="height:16px"></div></div></div></div>
+    <!-- End ST Yasr Visitor Votes Readonly Shortcode -->
+    					<span class="article__meta__vote-count">
+						33					</span>
+				</li>
+
+				<!-- Post view count -->
+				<li class="article__meta__post-views">
+					<p><strong>25231</strong> <small>views</small></p>				</li>
+
+				<!-- Bookmarks -->
+				
+				<!-- Sharing -->
+				<li class="padded-top--tight">
+					
+<ul class="sharing">
+	<li class="spaced-bottom--none"><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/?view=print" id="social-share-print" class="sharing__link sharing__link--print" title="Printer friendly version"><img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/print.png" alt="Printer friendly version"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-email" class="sharing__link sharing__link--email" title="Email" href="mailto:?subject=Article%20on%20https://www.red-gate.com/simple-talk:%20Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC&amp;body=I%20found%20this%20great%20article%20on%20https://www.red-gate.com/simple-talk.%0D%0A%0D%0AIt%27s%20called%20Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC.%0D%0A%0D%0AYou%20can%20find%20it%20here%20https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/."></a></li>
+
+	<li class="spaced-bottom--none"><a id="social-share-twitter" class="sharing__link sharing__link--twitter" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/&amp;text=Multi-Step%20Input%20Forms%20in%20ASP.NET%20MVC%20@simple_talk"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-facebook" class="sharing__link sharing__link--facebook" title="Facebook" target="_blank" href="https://facebook.com/sharer.php?u=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-google-plus" class="sharing__link sharing__link--google-plus" title="Google Plus" target="_blank" href="https://plus.google.com/share?url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+	<li class="spaced-bottom--none"><a id="social-share-linked-in" class="sharing__link sharing__link--linked-in" title="LinkedIn" target="_blank" href="https://linkedin.com/shareArticle?mini=true&amp;url=https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/"></a></li>
+</ul>
+				</li>
+			</ul>
+		</div>
+
+		
+		<!-- Main column -->
+		<div class="grid__col grid__col--span-7-of-12 grid__col--span-10-of-12--large grid__col--span-12-of-12--medium">
+			<div class="grid">
+				<div class="grid__col grid__col--span-4-of-12">
+					<div class="spaced-bottom">
+						<h3>Rate this article</h3>
+						
+        <!--Yasr Visitor Votes Shortcode-->
+        <div id="yasr_visitor_votes_68128" class="yasr-visitor-votes"><div class="rateit medium yasr_visitor_votes_stars_div" id="yasr_rateit_visitor_votes_68128" data-postid="68128" data-rateit-starwidth="24" data-rateit-starheight="24" data-rateit-value="4.2" data-rateit-step="1" data-rateit-resetable="false" data-rateit-readonly="false"><button id="rateit-reset-5" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-5" style="display: none;"></button><div id="rateit-range-5" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-5" aria-valuemin="0" aria-valuemax="5" aria-valuenow="4.181818181818182" aria-readonly="false" style="width: 120px; height: 24px;"><div class="rateit-selected" style="height: 24px; width: 100.364px;"></div><div class="rateit-hover" style="height:24px"></div></div></div><span class="yasr-total-average-container" id="yasr-total-average-text_68128">
+                    [Total: 33 &nbsp; &nbsp;Average: 4.2/5]
+                </span></div>
+        <!--End Yasr Visitor Votes Shortcode-->
+        					</div>
+				</div>
+				<div class="grid__col grid__col--span-8-of-12">
+					<div class="spaced-bottom">
+						<div class="sidebar__newsletter"><div class="newsletter-signup__sidebar">
+<h2>Subscribe for more articles</h2>
+<p class="padded-bottom--tight">Fortnightly newsletters help sharpen your skills and keep you ahead, with articles, ebooks and opinion to keep you informed.</p>
+</div>
+<div class="newsletter-signup__post-article">
+<h3>Subscribe to our fortnightly newsletter</h3>
+</div>
+<form method="post" action="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/" class="newsletter-signup"><ul class="list--bare padded-bottom--tight subscription-controls"><li><input type="checkbox" class="hc-checkbox subscription-control" name="newsletters[]" id="form-2--list-WP0iWal3XRl7637634pL0QAowg" value="WP0iWal3XRl7637634pL0QAowg"> <label class="hc-checkbox hc-checkbox--small" for="form-2--list-WP0iWal3XRl7637634pL0QAowg"><span>.NET newsletter</span></label></li><li><input type="checkbox" class="hc-checkbox subscription-control" name="newsletters[]" id="form-2--list-Ww0i892QBs90gtk8qJjIW87g" value="Ww0i892QBs90gtk8qJjIW87g"> <label class="hc-checkbox hc-checkbox--small" for="form-2--list-Ww0i892QBs90gtk8qJjIW87g"><span>Simple Talk</span></label></li></ul><label for="email">Email</label><input type="email" id="email"><input type="submit" value="Subscribe"></form></div>					</div>
+				</div>
+			</div>
+
+			
+
+
+
+
+
+<div class="author-bio media padded scheme--lightest-grey spaced-bottom padded-bottom--none">
+	
+	<span class="" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+		<div class="media__image clearfix">
+			<a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" class="avatar">
+				<img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/ace158af8dfab0e682dcc70d965514e5(1)" width="96" height="96" alt="" class="avatar-96wp-user-avatar wp-user-avatar-96 alignnone photo avatar-default">			</a>
+		</div>
+
+		<div class="media__body spaced-bottom--tight">
+			<h3><a href="https://www.red-gate.com/simple-talk/author/dino-esposito/" class="fn" itemprop="url"><span itemprop="name">Dino Esposito</span></a></h3>
+			<p>A long-time trainer and consultant, Dino is the author of many popular books for Microsoft Press for .NET developers, and the CTO of Crionet, a firm specializing in Web-based and mobile solutions for sport events across Europe (<a href="http://www.crionet.com/">http://www.crionet.com</a>), at the moment Dino is also technical evangelist for JetBrains, where he focuses on Android and Kotlin development, and member of the team that manages WURFL—the database of mobile devices used by organizations such as Google and Facebook. Follow Dino through his blog at <a href="http://software2cents.wordpress.com/">http://software2cents.wordpress.com</a> or at <a href="http://twitter.com/despos">http://twitter.com/despos</a>. Check out Dino’s latest book <a href="http://www.microsoftpressstore.com/store/microsoft-.net-architecting-applications-for-the-enterprise-9780735685352">“Microsoft .NET: Architecting Applications for the Enterprise”</a>.</p>
+
+			<p><a href="https://www.red-gate.com/simple-talk/author/dino-esposito/">View all articles by Dino Esposito</a></p>		</div>
+	</span>
+</div>
+		</div>
+
+					<div id="comments">
+				
+<div id="disqus_thread"><iframe id="dsq-app6760" name="dsq-app6760" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 985px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+			</div>
+		<meta itemprop="url" content="https://www.red-gate.com/simple-talk/dotnet/asp-net/multi-step-input-forms-asp-net-mvc/">
+<meta itemprop="headline" content="Multi-Step Input Forms in ASP.NET MVC">
+
+<span itemscope="" itemprop="publisher" itemtype="http://schema.org/Organization">
+    <span itemprop="name" content="Simple Talk"></span>
+    <span itemprop="logo" content=""></span>
+</span>
+	</div>
+</div>
+
+<section class="scheme--lightest-grey article__related-posts">
+	<div class="band__inner-container">
+				<section class="widget_related_posts band grid padded-v--tight">
+				<h1 class="beta">Related articles</h1>
+				<!-- Related posts by tag -->
+				
+				<!-- Related posts by category -->
+														
+							<div class="grid__col grid__col--span-4-of-12">
+								<div class="padded-h--tight">
+									<h2 class="zeta">Also in <a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/">ASP.NET</a></h2>
+									<h3><a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/asp-net-core-tag-helpers-bootstrap/">ASP.NET Core Tag Helpers for Bootstrap</a></h3>
+									 The ASP.NET Core tag helpers improve on the HTML templated helpers in ASP.NET MVC 5. ASP.NET Core  comes with some useful stock tag helpers for common tasks such as creating custom elements or extending existing HTML elements, but their use can be extended to making a framework such as Bootstrap easier to work with.  Dino shows how helpers are used, and demonstrates a Bootstrap Modal Tag Helper…									<a href="https://www.red-gate.com/simple-talk/dotnet/asp-net/asp-net-core-tag-helpers-bootstrap/">Read more</a>
+								</div>
+							</div>
+
+																
+		</section>
+	<div class="article__meta__tags"></div>	</div>
+</section></div>
+
+<footer class="site-footer grid scheme--black">
+    <div class="band__inner-container--tight">
+        <div class="grid__col grid__col--span-12-of-12">
+            <h2 class="text--redgate"><a href="https://www.red-gate.com/simple-talk">Simple Talk</a></h2>
+
+            
+            <ul id="menu-footer" class="site-footer__footer-nav"><li id="menu-item-20436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20436"><a href="https://www.red-gate.com/simple-talk/faq/">FAQ</a></li>
+<li id="menu-item-20633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20633"><a href="https://www.red-gate.com/simple-talk/sitemap/">Sitemap</a></li>
+<li id="menu-item-20632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20632"><a href="https://www.red-gate.com/simple-talk/write-for-us/">Write For Us</a></li>
+<li id="menu-item-66859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66859"><a href="https://www.red-gate.com/simple-talk/contact-us/">Contact Us</a></li>
+</ul>
+            <p class="site-footer__custom_text"></p>
+        </div>
+    </div>
+</footer>
+
+<footer class="background-color--grey--2">
+    <div class="band__inner-container grid">    
+        <div class="grid__row">
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="https://www.red-gate.com/products/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Products">Products</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#sql-server" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="SQL Server">SQL Server</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#azure" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Azure">Azure</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#net" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label=".NET">.NET</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#oracle" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="Oracle">Oracle</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#mysql" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Products" data-ga-track-label="MySQL">MySQL</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="https://productsupport.red-gate.com/hc" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Support">Support</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="https://forums.red-gate.com/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Forums">Forums</a></li>
+                    <li><a class="color--grey--5" href="https://productsupport.red-gate.com/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Contact product support">Contact product support</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/dynamic/account" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Find my serial numbers">Find my serial numbers</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/old-versions" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Download older versions">Download older versions</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/support/security" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Support" data-ga-track-label="Report security issue">Report security issue</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="https://www.red-gate.com/solutions/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Solutions">Solutions</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/solutions/database-devops/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Database DevOps">Database DevOps</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/solutions/data-privacy-protection/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Solutions" data-ga-track-label="Data Privacy &amp; Protection">Data Privacy &amp; Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="https://www.red-gate.com/our-company/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Our Company">Our Company</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/our-company/careers/current-opportunities" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Careers">Careers</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/our-company/contact-us" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Contact us">Contact us</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/blog/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Blog">Redgate Blog</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/our-company/careers/culture" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Our Company" data-ga-track-label="Culture">Our Culture</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4><a href="https://www.red-gate.com/hub/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Community &amp; Learning">Community &amp; Learning</a></h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/hub/product-learning" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Product Learning">Product Learning</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/hub/events/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Events &amp; Friends">Events &amp; Friends</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/simple-talk" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Simple Talk">Simple Talk</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/hub/books/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Books">Books</a></li>
+                    <li><a class="color--grey--5" href="https://forums.red-gate.com/" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Community &amp; Learning" data-ga-track-label="Forums">Forums</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-2-of-12">
+                <h4>Partners</h4>
+                <ul class="list--bare">
+                    <li><a class="color--grey--5" href="http://www.sqlservercentral.com/" target="_blank" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="SQL Server Central">SQL Server Central</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/#partner-products" target="_blank" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Partner products">Partner products</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/products/resellers" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Resellers">Resellers</a></li>
+                    <li><a class="color--grey--5" href="https://www.red-gate.com/training/find-a-consultant" data-ga-track="" data-ga-track-category="Footer" data-ga-track-action="Partners" data-ga-track-label="Consulting partners">Consulting partners</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid__row padded-top">
+            <div class="grid__col grid__col--span-6-of-12">
+                <ul class="list--bare list--horizontal">
+                    <li>Copyright 1999 - 2018 Red Gate Software Ltd</li>
+                    <li class="padded-left--tight"><a href="https://www.red-gate.com/website/legal">Privacy and cookies</a></li>
+                    <li class="padded-left--tight"><a href="https://www.red-gate.com/website/accessibility">Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="grid__col grid__col--span-6-of-12">
+                <a href="http://www.dbta.com/Editorial/Trends-and-Applications/DBTA-100-2017---The-Companies-That-Matter-Most-in-Data-118003.aspx" class="link-image">
+                    <img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/dbta-100.png" title="Database Trends and Applications Top 100">
+                </a>
+
+                <a href="http://sdtimes.com/sd-times-100/sd-times-100-2017-youve-arrived/" class="link-image padded-left--tight">
+                    <img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/sd-times-2017.png" title="SD Times Top 100 2017">
+                </a>
+
+                <img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/oracle-gold-partner.png" title="Oracle Gold Partner" class="padded-left--tight">
+
+                <img src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/microsoft-gold-partner.png" title="Microsoft Gold Partner" class="padded-left--tight">
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<link rel="stylesheet" id="crayon-css" href="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/crayon.min.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var scriptParams = {"google_search_engine_id":"002272417707427032016:mpxi5hqackc"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/google_cse_v2.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/infinite.js.download"></script><script type="text/javascript" id="" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jquery.scrolldepth.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/dropdown.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/jquery.rateit.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/core.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/widget.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/progressbar.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/tooltip.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var yasrCommonData = {"postid":"68128","ajaxurl":"https:\/\/www.red-gate.com\/simple-talk\/wp-admin\/admin-ajax.php","loggedUser":"","visitorStatsEnabled":"no","tooltipValues":["bad","poor","ok","good","super"],"loaderHtml":"<div id=\"loader-visitor-rating\" >\u00a0 Loading, please wait <img src=https:\/\/www.red-gate.com\/simple-talk\/wp-content\/plugins\/yet-another-stars-rating\/img\/loader.gif title=\"yasr-loader\" alt=\"yasr-loader\"><\/div>"};
+var yasrVisitorsVotesData = {"nonceVisitor":"d38c142295"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/yasr-front.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/polyfill.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpOptions = {"siteurl":"https:\/\/www.red-gate.com\/simple-talk"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+if ( typeof $ !== "function" && typeof jQuery === "function" ) { window.$ = jQuery; }
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/script.min.js.download"></script>
+<script type="text/javascript">
+var Redgate = Redgate || {}; Redgate.Hub = Redgate.Hub || {}; Redgate.Hub.isHubSubPage = true;
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/nav.js.download"></script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/wp-embed.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/www.red-gate.com\/simple-talk\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/crayon.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.9.2","language":"","remote_auth_s3":"W10= 87aff6221365faf63304612475130854c4c23036 1517320154","api_key":"PdEcftjqQxIsV3NwcBYKFkOmzPru3MJsixpbMeAAxi28QtGQ1LI5tjrfD7nlLmya","sso":{"name":"Simple Talk","button":false,"url":"https:\/\/www.red-gate.com\/simple-talk\/wp-login.php","logout":"https:\/\/www.red-gate.com\/simple-talk\/wp-login.php?action=logout","width":"800","height":"700"}},"disqusIdentifier":"68128 https:\/\/www.simple-talk.com\/?p=68128","disqusShortname":"simpletalk","disqusTitle":"Multi-Step Input Forms in ASP.NET MVC","disqusUrl":"https:\/\/www.red-gate.com\/simple-talk\/dotnet\/asp-net\/multi-step-input-forms-asp-net-mvc\/","options":{"manualSync":false},"postId":"68128"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/disqus.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"simpletalk"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/count.js(1).download"></script>
+
+
+
+<iframe style="display: none;" src="./Multi-Step Input Forms in ASP.NET MVC - Simple Talk_files/saved_resource(3).html"></iframe>    <script type="text/javascript" id="">window.heap=window.heap||[];
+heap.load=function(e,d){window.heap.appid=e;window.heap.config=d=d||{};var a=d.forceSSL||"https:"===document.location.protocol,b=document.createElement("script");b.type="text/javascript";b.async=!0;b.src=(a?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);for(var b=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},a="addEventProperties addUserProperties clearEventProperties identify removeEventProperty setEventProperties track unsetEventProperty".split(" "),c=
+0;c<a.length;c++)heap[a[c]]=b(a[c])};heap.load("3441118981");</script></body></html>

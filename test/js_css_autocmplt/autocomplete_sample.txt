@@ -1,0 +1,74 @@
+<div class="demo-title"><h4>DEMO BY <span class="one">CODEX</span><span class="two">WORLD</span>: Autocomplete textbox using jQuery, PHP and MySQL</h4></div>
+        <div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+            <div class="ui-widget">
+              <label for="skills">Skills: </label>
+              <input id="skills">
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <!-- /.container -->
+	    	<div class="bar-footer">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- FooterLinksRenponsive -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5750766974376423"
+             data-ad-slot="2211144895"
+             data-ad-format="link"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+        	<!-- JavaScript -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     	    	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+            <script src="http://demos.codexworld.com/includes/js/bootstrap.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    	    <script>
+  $(function() {
+  var availableTags = [
+      "ActionScript",
+	  "AngularJS",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+	  "MSSQL",
+	  "MySQL",
+	  "NodeJs",
+	  "Oracle",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme",
+	  "SQL"
+    ];
+    $( "#skills" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+</body>
+</html>

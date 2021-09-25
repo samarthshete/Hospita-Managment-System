@@ -1,0 +1,120 @@
+(function($, angular, Applet) {
+    'use strict';
+
+    const KVLDataSaverURL = '/i/api/reg-flow/save-initial/';
+    const initFormRedirectURL = '/signup/?dataFrom=';
+
+    angular.module('hipoReg')
+        .controller('HipoController', HipoController);
+        
+    angular.module('uiApplet').requires.push('hipoReg');
+
+    HipoController.$inject = ['$timeout', '$window', '$scope', '$http', '$q', 'valuesService', 'cookieService', 'loggingService'];
+    function HipoController($timeout, $window, $scope, $http, $q, valuesService, cookieService, loggingService) {
+        let vm = this,
+            formName = 'signup_bogus_form',
+            eeBlocked = false,
+            submitting = false,
+            submitted = false,
+            initialized = false;
+
+        vm.model = {};
+        vm.form = null;
+        vm.initialize = initialize;
+        vm.isBlocked = isBlocked;
+        vm.btnDisabled = btnDisabled;
+        vm.submit = submit;
+
+        angular.element(document).bind('click', function(event) {
+            let target = angular.element(event.target);
+
+            if (target.hasClass('hipo-reg-popup-open')) {
+                event.preventDefault();
+                openModal();
+            } else if (target.hasClass('hipo-reg-popup-close') && !isBlocked()) {
+                closeModal();
+            }
+        });
+
+        function openModal() {
+            angular.element(document.body).addClass('__freeze-position');
+            document.querySelector('#hipo-reg-popup').style.display = 'flex';
+
+            loggingService.logOptimizely('hhq_registration_popup_impression');
+            loggingService.logGTM('HHQ', 'Impression', 'HHQ Registration Popup');
+            loggingService.logMatch('click', 'click', 'vs_hiring-headquarters', 'hhq_registration-popup', {
+                action: 'impression'
+            });
+        };
+
+        function closeModal() {
+            angular.element(document.body).removeClass('__freeze-position');
+            document.querySelector('#hipo-reg-popup').style.display = 'none';
+
+            loggingService.logOptimizely('hhq_registration_popup_close');
+            loggingService.logGTM('HHQ', 'Close', 'HHQ Registration Popup');
+            loggingService.logMatch('click', 'click', 'vs_hiring-headquarters', 'hhq_registration-popup', {
+                action: 'close'
+            });
+        };
+
+        function isBlocked() {
+            return eeBlocked;
+        };
+
+        function initialize() {
+            valuesService.setFormName(formName);
+
+            $timeout(function() {
+                vm.form = $scope[formName];
+                valuesService.initializeValues(vm.model, ['firstName', 'lastName', 'email']);
+                initialized = true;
+            });
+        };
+
+        function btnDisabled() {
+            return submitted || submitting;
+        };
+
+        function finishRegistration(redirectURL) {
+            submitted = true;
+
+            loggingService.logOptimizely('hhq_registration_popup_submit');
+            loggingService.logGTM('HHQ', 'Submit', 'HHQ Registration Popup');
+            loggingService.logMatch('click', 'submit', 'vs_hiring-headquarters', 'registration-modal');
+
+            valuesService.clearValues();
+            $window.location.href = redirectURL;
+        };
+
+        function submit(onSuccess, onError) {
+            submitting = true;
+            eeBlocked = true;
+
+            let promises = [];
+            for (let field in vm.model) {
+                promises.push(valuesService.validate(field, vm.model[field]));
+            }
+
+            $q.all(promises).then(function(values) {
+                return values.every(x => x) && $http({
+                    url: KVLDataSaverURL,
+                    method: 'POST',
+                    data: angular.toJson({
+                        [formName]: angular.extend({}, vm.model)
+                    }),
+                    headers: {
+                        [Applet.getVar('csrfTokenHeaderName')]: cookieService.getCookie(Applet.getVar('csrfTokenCookieName'))
+                    },
+                });
+            }).then(function(response) {
+                if (response && response.data.KVLKey) {
+                    return response.data.success && finishRegistration(initFormRedirectURL + response.data.KVLKey + '&dest=jobpost');
+                }
+            }).finally(function() {
+                submitting = false;
+                eeBlocked = false;
+            });
+        }
+    }
+})(jQuery, angular, Applet);

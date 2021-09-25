@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)https://s0.2mdn.net/ads/richmedia/studio/37408878/TechLabViewabilityEvent_V1.0.11_alphaContainer.min.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 
+// HTML Document
+// HTML5 Tech Lab solution by Google
+// Viewability Solution based on requestAnimationFrame checks
+// Created by eduque@
+-->
+<style>
+body,html{
+  margin:0;
+  border:0;
+}
+</style>
+</head>
+<body>
+<iframe id="myIframe" scrolling="0" frameborder="0" src="./TechLabViewabilityEvent_V1.0.11_alpha.min.html"></iframe>
+<script>
+function readyToGo(a){parent.postMessage("TechLabViewability,"+a,"*")}function runBrowserRenderingViewability(){var a=document.getElementById("myIframe");a.iframeBorder="0";a.src="TechLabViewabilityEvent_V1.0.11_alpha.min.html"}var oldStatus="isNotVisible",newStatus="isNotVisible";function isExplorer(){return/msie|trident|edge/g.test(navigator.userAgent.toLowerCase())}
+function checkIE_Viewability(){setInterval(function(){newStatus=null==document.elementFromPoint(0,0)?"isNotVisible":"isVisible";if(newStatus!=oldStatus){oldStatus=newStatus;try{readyToGo(newStatus)}catch(a){}}},1E3)}window.onload=function(){1==isExplorer()?checkIE_Viewability():runBrowserRenderingViewability()};
+</script>
+
+</body></html>

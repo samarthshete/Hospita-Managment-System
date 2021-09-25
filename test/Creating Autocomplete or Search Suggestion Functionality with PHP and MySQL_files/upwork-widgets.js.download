@@ -1,0 +1,110 @@
+function upworkWidgetInit(angular) {
+
+    angular.module('upworkWidgetSlider', ['ngAnimate', 'ngTouch']);
+    angular.module('upworkWidgetSlider').controller('ProfileSlider', ['$scope', '$window', ProfileSlider]);
+
+    angular.module('uiApplet').requires.push('upworkWidgetSlider');
+
+    function ProfileSlider($scope, $window) {
+        var vm = this;
+
+        vm.profiles = [];
+        vm.slides = [];
+        vm.activeSlideIndex = 0;
+        vm.isFirst = true;
+        vm.isLast = false;
+
+        vm.init = init;
+        vm.ifVisible = ifVisible;
+        vm.next = next;
+        vm.prev = prev;
+        vm.getSlideClass = getSlideClass;
+        vm.showSignUp = vm.showSignUp;
+
+        let perSlideCount = 4;
+
+        function init() {
+            vm.profiles = vm.profiles.freelancers;
+            configSlideCount();
+        }
+
+        function ifVisible(index) {
+            return index == vm.activeSlideIndex || ($window.innerWidth < 768 && (index + 2 >= vm.activeSlideIndex && index - 2 <= vm.activeSlideIndex));
+        }
+
+        function next() {
+            vm.activeSlideIndex += vm.activeSlideIndex < vm.slides.length - 1 ? 1 : 0;
+            updateFirstLast();
+        }
+
+        function prev() {
+            vm.activeSlideIndex -= vm.activeSlideIndex > 0 ? 1 : 0;
+            updateFirstLast();
+        }
+
+        function getSlideClass(index) {
+            let elementClass = [];
+            if (index > vm.activeSlideIndex) {
+                elementClass.push('after-slide');
+            }
+            if (index < vm.activeSlideIndex) {
+                elementClass.push('before-slide');
+            }
+            if (index + 2 == vm.activeSlideIndex) {
+                elementClass.push('before-prev-slide');
+            }
+            if (index - 2 == vm.activeSlideIndex) {
+                elementClass.push('after-next-slide');
+            }
+            return elementClass;
+        }
+
+        function updateFirstLast() {
+            vm.isFirst = vm.activeSlideIndex == 0;
+            vm.isLast = vm.activeSlideIndex == vm.slides.length - 1;
+        }
+
+        function configSlideCount() {
+            let perSlideCount = 4;
+            if ($window.innerWidth < 768) {
+                perSlideCount = 1;
+            } else if ($window.innerWidth < 992) {
+                perSlideCount = 2;
+            } else if ($window.innerWidth < 1200) {
+                perSlideCount = 3;
+            }
+
+            let slide = [];
+            vm.slides = [];
+            vm.profiles.forEach((profile) => {
+                profile['isCta'] = false;
+                slide.push(profile);
+                if (slide.length >= perSlideCount) {
+                    vm.slides.push(slide);
+                    slide = [];
+                }
+            });
+            slide.push({
+                isCta: true
+            });
+            if (slide.length > 0) {
+                vm.slides.push(slide);
+            }
+        }
+
+        function showSignUp() {
+            return vm.isLast;
+        }
+
+        angular.element($window).bind('resize', function() {
+            configSlideCount();
+            vm.activeSlideIndex = 0;
+            updateFirstLast();
+            $scope.$digest();
+        });
+    }
+}
+
+if (typeof(angular) !== 'undefined') {
+    upworkWidgetInit(angular);
+}

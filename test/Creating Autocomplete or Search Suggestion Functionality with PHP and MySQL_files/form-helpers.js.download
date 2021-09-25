@@ -1,0 +1,339 @@
+(function(angular, Applet) {
+    'use strict';
+
+    const validationAPIEndpoint = '/signup/api/useraccounts/validate.json';
+    const validateTimeout = 7000;
+    const localValidators = {
+        fields: {
+            firstName: {
+                name: 'First Name',
+                validator: ['personName', 'firstName']
+            },
+            lastName: {
+                name: 'Last Name',
+                validator: ['personName', 'lastName']
+            }
+        },
+        validators: {
+            personName: [
+                function(value, name) { return !value && (name + ' is required'); },
+                function(value) { return value.length > 100 && 'Too long. Use 100 characters or less'; }
+            ],
+            firstName: [
+                function(value) { return !/^(([a-zA-Z- ']+)|(Fn-[0-9]{12}))$/i.test(value) && 'Sorry! No special characters or numbers'; },
+            ],
+            lastName: [
+                function(value) { return !/^(([a-zA-Z- ']+)|(Ln-[0-9]{12}))$/i.test(value) && 'Sorry! No special characters or numbers'; },
+            ]
+        }
+    };
+
+    angular.module('hipoReg', ['marketing.global.eventlog', 'marketing.global.gtm'])
+        .factory('valuesService', valuesService)
+        .factory('cookieService', cookieService)
+        .factory('loggingService', loggingService)
+        .directive('aqSignupError', aqSignupError)
+        .directive('aqSignupValidate', aqSignupValidate);
+
+    valuesService.$inject = ['$http', '$q', '$timeout', 'cookieService'];
+    function valuesService($http, $q, $timeout, cookieService) {
+        let errors = {},
+            validity = {},
+            values = {},
+            cached = {},
+            formName = null,
+            valuesInitialized = false,
+            fieldModels = {};
+
+        return {
+            setFormName: setFormName,
+            initializeValues: initializeValues,
+            clearValues: clearValues,
+            validate: validate,
+            valueUpdated: valueUpdated,
+            setValidatingField: setValidatingField,
+            getError: getError
+        };
+
+        function setFormName(name) {
+            formName = name + '_values';
+        };
+
+        function initializeValues(model, fields) {
+            valuesInitialized = true;
+            let result = JSON.parse(localStorage.getItem(formName)) || {};
+
+            // field referrer is required for KVL save
+            model['referrer'] = window.location.href.split('?')[0];
+            fields.forEach(function(field) {
+                if (!model.hasOwnProperty(field)) {
+                    model[field] = result.hasOwnProperty(field) ? result[field] : null;
+                }
+            });
+        };
+
+        function clearValues() {
+            formName && localStorage.removeItem(formName);
+        };
+
+        function getError(field) {
+            return !validity[field] && errors[field] || false;
+        };
+
+        function setValidity(field, isValid = true) {
+            fieldModels[field] && fieldModels[field].$setValidity('rest', isValid);
+            validity[field] = isValid;
+        };
+
+        function valueUpdated(field, value) {
+            setValidity(field);
+
+            //  If this field is not a password, cache value in localStorage.
+            if (valuesInitialized && field != 'password') {
+                values[field] = value;
+
+                //  Updating form information in localStorage.
+                localStorage.setItem(formName, JSON.stringify(values));
+            }
+        };
+
+        function setValidatingField(field, model) {
+            fieldModels[field] = model;
+            model.$setDirty();
+
+            setValidity(field);
+        };
+
+        function validateCB(field, value, response, success, cancelled) {
+            let isValid = success && response && response.status == 'OK';
+
+            //  Checking is value valid.
+            if (isValid) {
+                delete errors[field];
+            } else {
+                errors[field] = (response && response.message) || 'Something gone wrong. Please try again';
+            }
+
+            //  Caching last validation result.
+            if (!cancelled) {
+                cached[field] = {
+                    value: value,
+                    response: response,
+                    success: success
+                };
+            }
+
+            setValidity(field, isValid);
+
+            return isValid;
+        };
+
+        function validate(field, value) {
+            let deferred = $q.defer();
+
+            //  If there is no need to validate this field, 
+            //  this is always valid.
+            if (!fieldModels.hasOwnProperty(field)) {
+                deferred.resolve(true);
+
+                return deferred.promise;
+            }
+
+            //  Value fallback.
+            value = value || '';
+
+            //  Changing value in the container.
+            let cache = cached[field];
+            let cancelled = false;
+
+            //  Validation callback.
+            function callValidationCB(data, success) {
+                //
+                return validateCB(field, value, data, success, cancelled);
+            }
+
+            //  If this value matches with the last one, 
+            //  which was validated, we have already information about it, 
+            //  so we dont need to validate it again.
+            if (cache && cache.value == value) {
+                deferred.resolve(callValidationCB(cache.response, cache.success));
+
+                return deferred.promise;
+            }
+
+            //  If we can validate those fields without xhr request.
+            let localCheck = localValidators.fields[field];
+            if (localCheck) {
+                let error = '';
+                let validatorNames = localCheck.validator;
+
+                if (!Array.isArray(validatorNames)) {
+                    validatorNames = [validatorNames];
+                }
+
+                //  Validating with all validator names.
+                validatorNames.some(function(name) {
+                    return localValidators.validators[name].some(function(checker) {
+                        return error = checker(value, localCheck.name);
+                    });
+                });
+
+                deferred.resolve(callValidationCB({
+                    status: error ? 'Error' : 'OK',
+                    message: error
+                }, !error));
+
+                return deferred.promise;
+            }
+
+            // done to get correct CSRF token from adquiro
+            // url will be changed to /i/api/empty/ when its on stage
+            return $http({
+                method: 'HEAD',
+                url: '/i/api/empty/',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                timeout: $timeout(function() {
+                    cancelled = true;
+                }, validateTimeout)
+            }).then(function() {
+                return $http({
+                    method: 'POST',
+                    url: validationAPIEndpoint,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        [Applet.getVar('csrfTokenHeaderName')]: cookieService.getCookie(Applet.getVar('csrfTokenCookieName'))
+                    },
+                    withCredentials: true,
+                    timeout: $timeout(function() {
+                       cancelled = true;
+                    }, validateTimeout),
+                    data: $.param({
+                        fieldName: field,
+                        fieldValue: value
+                    })
+                }).then(function(response) {
+                    return callValidationCB(response.data, true);
+                }, function(response) {
+                    return callValidationCB(response.data, false);
+                });
+            }).catch(function(response) {
+                return callValidationCB(response.data, false);
+            });
+        }
+    };
+
+    function cookieService() {
+        return {
+            getCookie: getCookie
+        };
+
+        function getCookie(cookieName) {
+            let cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookieParts = cookies[i].trim().split('=');
+                if (cookieParts[0] == cookieName) {
+                    return cookieParts[1];
+                }
+            }
+
+            return '';
+        }
+    };
+
+    loggingService.$inject = ['eoModelFactory', 'oLog', 'gtmTracker'];
+    function loggingService(eoModelFactory, oLog, gtmTracker) {
+        return {
+            logGTM: logGTM,
+            logMatch: logMatch,
+            logOptimizely: logOptimizely
+        };
+
+        function logGTM(event, type, category, action, label) {
+            try {
+                gtmTracker.track('ga', {
+                    eventCategory: category,
+                    eventAction: action,
+                    eventLabel: label
+                });
+            } catch(err) {
+                warnOnFailure('GTM event has not been logged', err);
+            }
+        };
+
+        function logMatch(type, event, location, sublocation, data = {}) {
+            angular.extend(data, {
+                referrer: getReferrer(),
+                post: window.location.href.split('?')[0],
+                userAgent: navigator.userAgent
+            });
+
+            try {
+                oLog.event(eoModelFactory.get('Event', {
+                    type: type,
+                    event: event,
+                    location: location,
+                    sublocation: sublocation,
+                    data: [data]
+                }));
+            } catch(err) {
+                warnOnFailure('Match event has not been logged', err);
+            }
+        };
+
+        function logOptimizely(eventName) {
+            window['optimizely'] = window['optimizely'] || [];
+            window['optimizely'].push({
+                type: 'event',
+                eventName: eventName
+            });
+        };
+
+        function warnOnFailure(note, error) {
+            console.warn(note + ': ', error.hasOwnProperty('message')
+                ? error.message
+                : error);
+        }
+    };
+
+    aqSignupError.$inject = ['valuesService'];
+    function aqSignupError(valuesService) {
+        return {
+            restrict: 'A',
+            scope: {
+                aqSignupError: '@'
+            },
+            template: '<label ng-if="error" class="form-message form-error">{{ error }}</label>',
+            link: link
+        };
+
+        function link(scope, element, attr) {
+            scope.$watch(function() {
+                return valuesService.getError(attr.aqSignupError);
+            }, function(nv) {
+                scope.error = nv;
+            });
+        }
+    };
+
+    aqSignupValidate.$inject = ['valuesService'];
+    function aqSignupValidate(valuesService) {
+        return {
+            restrict: 'A',
+            require: 'ngModel',
+            scope: {
+                aqSignupValidate: '=',
+                aqSignupValidateField: '@'
+            },
+            link: link
+        };
+
+        function link(scope, element, attr, model) {
+            let field = attr.aqSignupValidate.split('.').slice(-1)[0];
+            valuesService.setValidatingField(field, model);
+
+            scope.$watch('aqSignupValidate', function(value) {
+                valuesService.valueUpdated(field, value);
+            });
+        }
+    }
+})(angular, Applet);

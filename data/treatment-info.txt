@@ -1,0 +1,3 @@
+Patinet is asked to<br>
+Patient is required to<br>
+Oral medication for --- days<br>

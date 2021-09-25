@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/8e23a381b9"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    <iframe height="0" width="0" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/activityi.html" style="display: none; visibility: hidden;" class=" bf_frame_init"></iframe><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/8410.js.download" async="" type="text/javascript"></script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/nr-1071.min.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/sync.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/exec.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/6563065.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/dsG.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/tro.js.download"></script><script async="" id="demandbase_js_lib" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/B3KhiJdo.min.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/munchkin.js.download"></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/qevents.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/insight.min.js.download"></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/main.min.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/bf-munchkin.min.js.download"></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/airpr.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/br-trk-5407.js.download"></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/a.js.download"></script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/816554411748126" async=""></script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/1156132424461812" async=""></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/uwt.js.download"></script><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/analytics.js.download"></script><script async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/gtm.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQIBUF5RGwUJXVNWAwcB"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    <script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/2765661494.js.download"></script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v5.9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL</title>
+<meta name="description" content="You probably know that most websites should have &quot;friendly search.&quot; So what is friendly search? A modern description of this term is: a function to predict a user’s query or help him to compose the right question. The best solution for building a friendly search is with autocomplete or search suggestion functions.">
+<link rel="canonical" href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL">
+<meta property="og:description" content="You probably know that most websites should have &quot;friendly search.&quot; So what is friendly search? A modern description of this term is: a function to predict a user’s query or help him to compose the right question. The best solution for building a friendly search is with autocomplete or search suggestion functions.">
+<meta property="og:url" content="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/">
+<meta property="og:site_name" content="Hiring | Upwork">
+<meta property="article:tag" content="back-end development">
+<meta property="article:tag" content="databases">
+<meta property="article:tag" content="PHP">
+<meta property="article:section" content="Community">
+<meta property="article:published_time" content="2016-01-25T13:37:51-08:00">
+<meta property="article:modified_time" content="2017-12-31T20:41:07-08:00">
+<meta property="og:updated_time" content="2017-12-31T20:41:07-08:00">
+<meta property="og:image" content="https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature.jpg">
+<meta property="og:image:secure_url" content="https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature.jpg">
+<meta property="og:image:width" content="940">
+<meta property="og:image:height" content="400">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="You probably know that most websites should have &quot;friendly search.&quot; So what is friendly search? A modern description of this term is: a function to predict a user’s query or help him to compose the right question. The best solution for building a friendly search is with autocomplete or search suggestion functions.">
+<meta name="twitter:title" content="Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL">
+<meta name="twitter:image" content="https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature.jpg">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.upwork.com\/hiring\/","name":"Hiring Headquarters @Upwork","alternateName":"Hiring HQ","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.upwork.com\/hiring\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.upwork.com\/hiring\/development\/creating-autocomplete-functionality-with-php-and-mysql\/","sameAs":[],"@id":"#organization","name":"Upwork","logo":"https:\/\/content-static.upwork.com\/blog\/uploads\/sites\/3\/2015\/06\/26165742\/Upwork_logo.jpg"}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://www.upwork.com/">
+<link rel="dns-prefetch" href="https://d2oh4tlt9mrke9.cloudfront.net/">
+<link rel="dns-prefetch" href="https://components.elance-odesk.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://app-sj09.marketo.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Hiring | Upwork » Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL Comments Feed" href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.upwork.com\/hiring\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="et-gf-open-sans-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="marketing-ui-components-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/components.css" type="text/css" media="all">
+<link rel="stylesheet" id="outdated-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/outdated.css" type="text/css" media="all">
+<link rel="stylesheet" id="app-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/app.css" type="text/css" media="all">
+<link rel="stylesheet" id="hipo-reg-css-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/hipo-reg.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="upwork_widget_css-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/upwork-widgets.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/jetpack.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://www.upwork.com/hiring/wp-json/">
+<link rel="shortlink" href="https://wp.me/p6omIA-2bN">
+<link rel="alternate" type="application/json+oembed" href="https://www.upwork.com/hiring/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.upwork.com/hiring/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;format=xml">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.upwork.com/hiring/?wordfence_lh=1&hid=04324384708D60C1586C619CFE0EDAFE');
+</script><style type="text/css" id="et-social-custom-css">
+				.et_monarch .et_social_sidebar_networks li, .et_monarch .et_social_mobile li { background: #f2f2f2; } .et_monarch .et_social_sidebar_networks .et_social_icons_container li:hover, .et_monarch .et_social_mobile .et_social_icons_container li:hover { background: #37a000 !important; } .et_social_sidebar_border li { border-color: #37a000 !important; } .et_monarch .et_social_sidebar_networks .et_social_icons_container li i, .et_monarch .et_social_sidebar_networks .et_social_icons_container li .et_social_count, .et_monarch .et_social_mobile .et_social_icons_container li i, .et_monarch .et_social_mobile .et_social_icons_container li .et_social_count { color: #b2b2b2; } .et_monarch .et_social_icon, .et_monarch .et_social_icon:before, .et_monarch .et_social_icon:after { font-size: 14px; } .et_monarch .et_social_icon_googleplus:before, .et_monarch .et_social_icon_googleplus:after { font-size: 10px; } .et_social_networkname { color: #b2b2b2; } .et_social_icons_container li:hover .et_social_networkname { color: #fff; } .et_social_hide_sidebar { display:none!important; } @media only screen and (max-width: 1024px) { .et_social_mobile { height: 40px!important } .et_social_heading { display: none!important; overflow: hidden; } .et_monarch .et_social_mobile .et_social_networks { display: block!important; padding: 0!important; background-color: #f2f2f2!important; height: 40px!important; overflow: hidden; } .et_social_network_label { display: none!important; } .et_monarch .et_social_mobile .et_social_networks li a { width: auto!important; display: inline-block; } .et_monarch .et_social_networks li, .et_monarch .et_social_mobile .et_social_networks li { clear: none !important; float: left; margin-top: 0px!important; margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important; width: 16.66666%!important; text-align: center; border-radius: 0; } .et_monarch .et_social_networks li:nth-child(2n+1), .et_monarch .et_social_mobile .et_social_networks li:nth-child(2n+1) { clear: none !important; } .et_monarch .et_social_networks li:nth-child(n+2), .et_monarch .et_social_mobile .et_social_networks li:nth-child(n+2) { margin-top: 0px!important; margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important; } }
+			</style>
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<style type="text/css">img#wpstats{display:none}</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+			<style type="text/css" id="wp-custom-css">
+				/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+.single table {
+/*border: 1px solid #000;*/
+	margin-bottom: 5px;
+}
+
+.single td {
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+/* added by Carey to hide featured images on all pages sitewide with a video */
+.single-format-video .article-featured-image img {
+	display: none;
+}			</style>
+		
+  <script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/sessioncam.recorder.js.download"></script><style>[data-columns]::before{display:block;visibility:hidden;position:absolute;font-size:1px;}</style><script async="" type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/count.js.download"></script><script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/config.aspx"></script><a href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/?_pxhc=1517371549747" rel="nofollow" target="_blank" style="width: 0px; height: 0px; font-size: 0px; line-height: 0;">click</a><style type="text/css" id="ki-qar-qsk"></style><style type="text/css" id="ki-qar-q6k"></style><script type="text/javascript" async="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/saved_resource"></script></head>
+  <body class="post-template-default single single-post postid-8419 single-format-standard et_monarch ng-scope" data-ng-app="uiApplet" style="position: relative;">
+    <!-- Google Tag Manager -->
+    <script>dataLayer = [{"site":{"application":"Wordpress","version":"1d9dd14","environment":"production"},"user":{"visitor_id":"","recognized":false}}];</script>
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-K7572X" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K7572X');</script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript">
+    let Applet = new function() {
+        let phpVars = {"csrfTokenCookieName":"XSRF-TOKEN","csrfTokenHeaderName":"X-Odesk-Csrf-Token","visitorID":"59.95.240.136.1517371536820589","visitorApiKey":"9e6c09e0b49c4544098f4cf6d8bdaa3b"};
+
+        this.getVar = getVar;
+        this.getVisitorId = getVisitorId;
+        this.getVisitorApiKey = getVisitorApiKey;
+
+        function getVar(key) {
+            return phpVars[key];
+        };
+
+        function getVisitorId() {
+            return getVar('visitorID');
+        };
+
+        function getVisitorApiKey() {
+            return getVar('visitorApiKey');
+        };
+    };
+
+    function getReferrer() {
+        if (navigator.userAgent.match(/Android/i)) {
+            return 'mobile_web_android';
+        } else if (navigator.userAgent.match(/BlackBerry/i)) {
+            return 'mobile_web_blackberry';
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            return 'mobile_web_ios';
+        } else if (navigator.userAgent.match(/Opera Mini/i)) {
+            return 'mobile_web_opera';
+        } else if (navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i)) {
+            return 'mobile_web_windows';
+        } else {
+            return 'desktop_site';
+        }
+    };
+</script>
+    <olog-trigger olog-name="impression" olog-location="/development/creating-autocomplete-functionality-with-php-and-mysql/"></olog-trigger>
+    <div class="off-canvas-wrap ng-scope" ui-off-canvas=""><div class="inner-wrap nav-scrollspy" ng-transclude="">
+          <header role="banner" class="header-navbar header-client ng-scope affix" ui-sticky-nav="">
+  <div class="container">
+    <a href="https://www.upwork.com/" class="logo">
+      <img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/upwork-logo.svg" alt="Upwork" width="106">
+    </a>
+    <div class=" desktop-navbar">
+      <nav class="nav font-gotham-medium">
+        <ul class="user-links list-inline pull-right">
+          <li>
+            <a href="https://www.upwork.com/signup/create-account/client_direct" class="btn btn-primary header-cta-feh">
+              Get Started
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="header-navbar header-dummy ng-scope"></div>  
+    <main id="main" class="ng-scope">
+        <!-- Main content Part Start -->
+  <main role="main">
+    <!-- Banner start -->
+                  <section id="hhq-headline" class="text-center" role="navigation">
+  <div class="container">
+    <div class="header-navbar inner-wrapper">
+      <a href="https://www.upwork.com/hiring" class="logo">
+        Hiring Headquarters
+      </a>
+      <ul class="list-inline">
+        <li class="nav">
+          <ul class="site-links list-inline navbar-right">
+                          <li class="active visible-xs-inline-block">
+                <a href="https://www.upwork.com/hiring">
+                  Hiring HQ
+                </a>
+              </li>
+                              <li id="menu-item-37458" class=" menu-item-37458">
+                  <a href="https://www.upwork.com/blog/">
+                    Blog
+                  </a>
+                </li>
+                              <li id="menu-item-40633" class=" menu-item-40633">
+                  <a href="https://www.upwork.com/i/hiring-guides/">
+                    Resources
+                  </a>
+                </li>
+                              <li id="menu-item-36744" class=" menu-item-36744">
+                  <a href="https://www.upwork.com/ppc/jobpost/?utm_campaign=HHQNavTest&amp;utm_source=HHQ&amp;utm_medium=content">
+                    Find Expert Talent
+                  </a>
+                </li>
+                                    </ul>
+        </li>
+        <li class="search-form-li">
+          <span id="search">
+            <div class="form-wrapper">
+              <form role="search" action="https://www.upwork.com/hiring" method="get" class="ng-pristine ng-valid">
+                <div class="input-group">
+                  <div class="button white-icon visible-xs-inline-block"></div>
+                  <button type="submit" class="button hidden-xs"></button>
+                  <input autocomplete="off" type="text" class="hidden-xs search-input" name="s" value="" placeholder="Search Articles" maxlength="100" required="">
+                  <ul class="autocomplete-dropdown"></ul>
+                </div>
+              </form>
+            </div>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>              <!-- End of Banner -->
+
+        
+          <div class="container-fluid bg-light-grey">
+        <div class="row">
+          <div class="accordion nav-categories visible-xs visible-sm col-xs-12">
+            <h4 class="title font-gotham-bold text-uppercase categories-main-title">
+              <a data-toggle="collapse" data-target="#navigation" class="collapsed">Articles</a>
+            </h4>
+            <div id="navigation" class="collapse">
+              <ul id="menu_accordion_mobile" class="categories parent-category list-unstyled text-uppercase">
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5627">
+      <a title="Admin Support" class="collapsed" href="https://www.upwork.com/hiring/admin-support/">Admin Support</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5628">
+      <a title="Community" class="collapsed" href="https://www.upwork.com/hiring/community/">Community</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8617">
+      <a title="Customer Stories" class="collapsed" href="https://www.upwork.com/hiring/customer-stories/">Customer Stories</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5630">
+      <a title="Customer Support" class="collapsed" href="https://www.upwork.com/hiring/customer-support/">Customer Support</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5634">
+      <a title="Data" class="collapsed" href="https://www.upwork.com/hiring/data/">Data</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5636">
+      <a title="Design" class="collapsed" href="https://www.upwork.com/hiring/design/">Design</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9315">
+      <a title="Education" class="collapsed" href="https://www.upwork.com/hiring/education/">Education</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5644">
+      <a title="Enterprise Solutions" class="collapsed" href="https://www.upwork.com/hiring/enterprise/">Enterprise Solutions</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5646">
+      <a title="For Clients" class="collapsed" href="https://www.upwork.com/hiring/for-clients/">For Clients</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5647">
+      <a title="For Freelancers" class="collapsed" href="https://www.upwork.com/hiring/for-freelancers/">For Freelancers</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5649">
+      <a title="Legal" class="collapsed" href="https://www.upwork.com/hiring/legal/">Legal</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5651">
+      <a title="Marketing" class="collapsed" href="https://www.upwork.com/hiring/marketing/">Marketing</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5656">
+      <a title="Mobile Development" class="collapsed" href="https://www.upwork.com/hiring/mobile/">Mobile Development</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10966">
+      <a title="Trends" class="collapsed" href="https://www.upwork.com/hiring/trends/">Trends</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5660">
+      <a title="Starting Up" class="collapsed" href="https://www.upwork.com/hiring/startup/">Starting Up</a>
+          </li>
+      <li class="title list-item menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5661">
+      <a title="Web Development" class="collapsed" href="https://www.upwork.com/hiring/development/">Web Development</a>
+          </li>
+        <li class="title">
+      <span id="search_mobile">
+  <div class="search  visible-xs ">
+    <form role="search" action="https://www.upwork.com/hiring" method="get" class="ng-pristine ng-valid">
+      <div class="input-group">
+        <button type="submit" class="button"></button>
+        <input type="text" name="s" value="" placeholder="Search Articles" maxlength="100" autocomplete="on" required="">
+      </div>
+    </form>
+  </div>
+</span>    </li>
+  </ul>            </div>
+          </div>
+        </div>
+      </div>
+            
+    <!-- Content Part -->
+      <section id="article-container">
+    <div class="container" itemscope="" itemtype="http://schema.org/Article">
+    <!-- Start of Popular Articles -->
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 article-headings">
+          <h1 class="font-gotham-bold" itemprop="headline">Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL</h1>
+        </div>
+        <section class="col-sm-10 col-sm-offset-1 hidden-xs">
+            <div class="custom-breadcrumb">
+            <ul itemscope="" itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="font-gotham-bold front_page"><a itemprop="item" href="https://www.upwork.com/hiring"><span itemprop="name">Hiring Headquarters Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="font-gotham-bold"><a itemprop="item" href="https://www.upwork.com/hiring/community/"><span itemprop="name">Community</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="font-gotham-bold breadcrumb-active"><a itemprop="item" href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/"><span itemprop="name">Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL</span></a><meta itemprop="position" content="3"></li></ul>
+            </div>
+        </section>
+        <!-- Popular Article Single Part -->
+        <div class="content-body">
+          <section class="col-sm-10 col-sm-offset-1">
+            <article class="col-sm-12 article-details no-gutters">
+                            <div class="article-featured-image">
+                <img itemprop="image" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-940x400.jpg" class="img-responsive col-xs-12 wp-image-43766" srcset="https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature.jpg 940w, https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-300x128.jpg 300w, https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-768x327.jpg 768w, https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-645x274.jpg 645w" sizes="(max-width: 940px) 100vw, 940px" alt="Image for Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL">
+              </div>
+                                                        <div class="body-content" itemprop="articleBody">
+                <p>You probably know that most websites should have “friendly search.” So what is friendly search? A modern description of this term is: a function to predict a user’s query or help him to compose the right question. The best solution for building a friendly search is with autocomplete or search suggestion functions.</p>
+<p>To add this feature to your site a few years ago, you had to have expertise with several technologies: AJAX, CSS, PHP and MySQL. Today, we can use libraries like Twitter’s Typeahead.js library, a jQuery plugin designed to add autocomplete functionality to search boxes. <a href="https://github.com/twitter/typeahead.js/">Learn more about this powerful tool on GitHub</a>.</p>
+<p>One of thing to note about Typeahead.js, however, is that it doesn’t include a sample with a MySQL database. Let’s fix that by creating autocomplete or search suggestions with PHP and MySQL.</p>
+<figure><img class="alignnone wp-image-8560" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0.png" alt="example of PHP search suggestion function" srcset="https://content-static.upwork.com/blog/uploads/sites/3/2016/01/22103222/pasted-image-0.png 781w, https://content-static.upwork.com/blog/uploads/sites/3/2016/01/22103222/pasted-image-0-300x218.png 300w, https://content-static.upwork.com/blog/uploads/sites/3/2016/01/22103222/pasted-image-0-768x559.png 768w, https://content-static.upwork.com/blog/uploads/sites/3/2016/01/22103222/pasted-image-0-550x400.png 550w" sizes="(max-width: 781px) 100vw, 781px"></figure>
+<p>&nbsp;</p>
+<p>First, let’s create an index.htm(l) file:<br>
+<code><br>
+</code></p>
+<pre class="lang:default decode:true " title="index.htm(l)">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="en-us"&gt;
+    &lt;title&gt;PHP MySQL Typeahead Autocomplete&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;script src="//code.jquery.com/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+    &lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        h1 {
+            font-size: 20px;
+            color: #111;
+        }
+
+        .content {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .tt-hint,
+        .city {
+            border: 2px solid #CCCCCC;
+            border-radius: 8px 8px 8px 8px;
+            font-size: 24px;
+            height: 45px;
+            line-height: 30px;
+            outline: medium none;
+            padding: 8px 12px;
+            width: 400px;
+        }
+
+        .tt-dropdown-menu {
+            width: 400px;
+            margin-top: 5px;
+            padding: 8px 12px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 8px 8px;
+            font-size: 18px;
+            color: #111;
+            background-color: #F1F1F1;
+        }
+    &lt;/style&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+
+            $('input.city').typeahead({
+                name: 'city',
+                remote: 'city.php?query=%QUERY'
+
+            });
+
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="content"&gt;
+
+        &lt;form&gt;
+            &lt;h1&gt;Try it yourself&lt;/h1&gt;
+            &lt;input type="text" name="city" size="30" class="city" placeholder="Please Enter City or ZIP code"&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<p>&nbsp;</p>
+<p><code>&nbsp;</code></p>
+<p><b>Now we will create a mysql.php file which will aggregate our query to MySQL DB and give response as JSON. Here is the code:</b></p>
+<pre class="lang:default decode:true ">&lt;?php
+
+//CREDENTIALS FOR DB
+define ('DBSERVER', 'localhost');
+define ('DBUSER', 'user');
+define ('DBPASS','password');
+define ('DBNAME','dbname');
+
+//LET'S INITIATE CONNECT TO DB
+$connection = mysql_connect(DBSERVER, DBUSER, DBPASS) or die("Can't connect to server. Please check credentials and try again");
+$result = mysql_select_db(DBNAME) or die("Can't select database. Please check DB name and try again");
+
+//CREATE QUERY TO DB AND PUT RECEIVED DATA INTO ASSOCIATIVE ARRAY
+if (isset($_REQUEST['query'])) {
+    $query = $_REQUEST['query'];
+    $sql = mysql_query ("SELECT zip, city FROM zips WHERE city LIKE '%{$query}%' OR zip LIKE '%{$query}%'");
+	$array = array();
+    while ($row = mysql_fetch_array($sql)) {
+        $array[] = array (
+            'label' =&gt; $row['city'].', '.$row['zip'],
+            'value' =&gt; $row['city'],
+        );
+    }
+    //RETURN JSON ARRAY
+    echo json_encode ($array);
+}
+
+?&gt;
+
+</pre>
+<p>&nbsp;</p>
+<div class="widget widget_profiles_widget"><h3 class="text-center upwork-widget-profile-title">Find a Recommended PHP Expert Now!</h3><div ng-controller="ProfileSlider as vm" class="upwork-widget-slider ng-scope" ng-init="vm.profiles={&quot;freelancers&quot;:[{&quot;recno&quot;:8037094,&quot;ciphertext&quot;:&quot;~01cc0d4319165f0e96&quot;,&quot;shortName&quot;:&quot;Brett R.&quot;,&quot;title&quot;:&quot;Senior ColdFusion Developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:b-roderick:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=NtLau5uv8Q7Z1Lo4bOyre%2BuHxeQ%3D\u00261437347349094307&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;United States&quot;,&quot;city&quot;:&quot;College Station&quot;,&quot;state&quot;:&quot;TX&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:30},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:44,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;coldfusion&quot;,&quot;prettyName&quot;:&quot;ColdFusion&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;web-programming&quot;,&quot;prettyName&quot;:&quot;Web Programming&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html&quot;,&quot;prettyName&quot;:&quot;HTML&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;sql&quot;,&quot;prettyName&quot;:&quot;SQL&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;ajax&quot;,&quot;prettyName&quot;:&quot;AJAX&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;salesforce.com&quot;,&quot;prettyName&quot;:&quot;Salesforce.com&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;google-maps-api&quot;,&quot;prettyName&quot;:&quot;Google Maps API&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;paypal-api&quot;,&quot;prettyName&quot;:&quot;PayPal Development&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:7819724,&quot;ciphertext&quot;:&quot;~0129a57f8ad710d70c&quot;,&quot;shortName&quot;:&quot;Maksym Kolesnyk&quot;,&quot;title&quot;:&quot;Frontend expert HTML5\/CSS3 developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:brhuman:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=yxY%2FmYTeqFBEroz97JNdoi2iqV8%3D\u00261459033745851088&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Ukraine&quot;,&quot;city&quot;:&quot;Odessa&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:30},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:5,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;html5&quot;,&quot;prettyName&quot;:&quot;HTML5&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;css3&quot;,&quot;prettyName&quot;:&quot;CSS3&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;sass&quot;,&quot;prettyName&quot;:&quot;Sass&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;gulp.js&quot;,&quot;prettyName&quot;:&quot;Gulp.js&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;git&quot;,&quot;prettyName&quot;:&quot;Git&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;bootstrap&quot;,&quot;prettyName&quot;:&quot;Bootstrap&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;angularjs&quot;,&quot;prettyName&quot;:&quot;AngularJS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;psd-to-html&quot;,&quot;prettyName&quot;:&quot;PSD to HTML&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:7671015,&quot;ciphertext&quot;:&quot;~01bd9e8ff9dd6b962c&quot;,&quot;shortName&quot;:&quot;harikrishna sunkari&quot;,&quot;title&quot;:&quot;Full Stack Developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:sunkari16:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=eQPG8WZRuensvJaPHrJvGeMqUsk%3D\u00261438412245890572&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;India&quot;,&quot;city&quot;:&quot;Banglore&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:31.25},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:3,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;node.js&quot;,&quot;prettyName&quot;:&quot;Node.js&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;angularjs&quot;,&quot;prettyName&quot;:&quot;AngularJS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;salesforce.com&quot;,&quot;prettyName&quot;:&quot;Salesforce.com&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mongodb&quot;,&quot;prettyName&quot;:&quot;MongoDB&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;paypal-api&quot;,&quot;prettyName&quot;:&quot;PayPal Development&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;payment-gateway-integration&quot;,&quot;prettyName&quot;:&quot;Payment Gateway Integration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;order-processing&quot;,&quot;prettyName&quot;:&quot;Order Processing&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;bootstrap&quot;,&quot;prettyName&quot;:&quot;Bootstrap&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;windows-azure&quot;,&quot;prettyName&quot;:&quot;Microsoft Windows Azure&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:7099642,&quot;ciphertext&quot;:&quot;~011e9fb5a39e20b876&quot;,&quot;shortName&quot;:&quot;Konstantinos Andrianopoulos&quot;,&quot;title&quot;:&quot;Wordpress PageSpeed expert&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:costinio:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=%2Bjutdx88yyFsIkX3KflYiQKu3Qk%3D\u00261493552796266717&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Greece&quot;,&quot;city&quot;:&quot;Patras&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:60},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:5,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;performance-tuning&quot;,&quot;prettyName&quot;:&quot;Performance Tuning&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;on-page-optimization&quot;,&quot;prettyName&quot;:&quot;On-Page Optimization&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress-plugin&quot;,&quot;prettyName&quot;:&quot;Wordpress Plugin&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html5&quot;,&quot;prettyName&quot;:&quot;HTML5&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;css3&quot;,&quot;prettyName&quot;:&quot;CSS3&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;bootstrap&quot;,&quot;prettyName&quot;:&quot;Bootstrap&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:130927,&quot;ciphertext&quot;:&quot;~016658dbc916c52ebb&quot;,&quot;shortName&quot;:&quot;Reginald Belarmino&quot;,&quot;title&quot;:&quot;Project Manager, QA Tester&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:rbelarmino:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=1jSP4eJRc%2FlZYUjKz989gyvdGnU%3D\u00261484202772898647&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Philippines&quot;,&quot;city&quot;:&quot;Caloocan&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:15},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:17,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;project-management&quot;,&quot;prettyName&quot;:&quot;Project Management&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;joomla&quot;,&quot;prettyName&quot;:&quot;Joomla&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;microsoft-project&quot;,&quot;prettyName&quot;:&quot;Microsoft Project&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;microsoft-visual-studio&quot;,&quot;prettyName&quot;:&quot;Microsoft Visual Studio&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;software-qa-testing&quot;,&quot;prettyName&quot;:&quot;Software QA Testing&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;systems-development&quot;,&quot;prettyName&quot;:&quot;Systems Development&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;software-testing&quot;,&quot;prettyName&quot;:&quot;Software Testing&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;web-content-management&quot;,&quot;prettyName&quot;:&quot;Content Management&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:2438402,&quot;ciphertext&quot;:&quot;~01e9faa921644071dd&quot;,&quot;shortName&quot;:&quot;Vitalii K.&quot;,&quot;title&quot;:&quot;Full stack web developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:vsquash:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=imP%2Ft0WzTb4cXPBFfhXU3b7Q%2BYo%3D\u00261443278929734361&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Ukraine&quot;,&quot;city&quot;:&quot;Kiev&quot;,&quot;state&quot;:&quot;Kyiv city&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:40},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:7,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mysql&quot;,&quot;prettyName&quot;:&quot;MySQL Administration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;node.js&quot;,&quot;prettyName&quot;:&quot;Node.js&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;ajax&quot;,&quot;prettyName&quot;:&quot;AJAX&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html&quot;,&quot;prettyName&quot;:&quot;HTML&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;css&quot;,&quot;prettyName&quot;:&quot;CSS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;ecommerce-consulting&quot;,&quot;prettyName&quot;:&quot;Ecommerce Platform Development&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;web-programming&quot;,&quot;prettyName&quot;:&quot;Web Programming&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:2391808,&quot;ciphertext&quot;:&quot;~01a8692f9a749605ec&quot;,&quot;shortName&quot;:&quot;Sajish Daniel&quot;,&quot;title&quot;:&quot;PHP Expert&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:sajishdaniel:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=riRUN9DaZ2kqfP6UoDDfSugFLqk%3D&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;India&quot;,&quot;city&quot;:&quot;calicut , Kerala&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:22.22},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:15,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;ajax&quot;,&quot;prettyName&quot;:&quot;AJAX&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;joomla&quot;,&quot;prettyName&quot;:&quot;Joomla&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mysql&quot;,&quot;prettyName&quot;:&quot;MySQL Administration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;microsoft-visual-basic&quot;,&quot;prettyName&quot;:&quot;Visual Basic&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html&quot;,&quot;prettyName&quot;:&quot;HTML&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;xhtml&quot;,&quot;prettyName&quot;:&quot;XHTML&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;zend-framework&quot;,&quot;prettyName&quot;:&quot;Zend Framework&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:3395025,&quot;ciphertext&quot;:&quot;~01ab6a409ed6dd4e29&quot;,&quot;shortName&quot;:&quot;Mehadi H.&quot;,&quot;title&quot;:&quot;Top Rated Web Developer - PHP, WordPress Expert \u0026 Spreadsheet Champion&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:mehadi_farhad:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=vVYmOtr7XlOHWtX8A9lFrozWo2A%3D\u00261464262948479219&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Bangladesh&quot;,&quot;city&quot;:&quot;Comilla&quot;,&quot;state&quot;:&quot;Chittagong Division&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:25},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:67,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;microsoft-excel&quot;,&quot;prettyName&quot;:&quot;Microsoft Excel&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html5&quot;,&quot;prettyName&quot;:&quot;HTML5&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;css3&quot;,&quot;prettyName&quot;:&quot;CSS3&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;website-development&quot;,&quot;prettyName&quot;:&quot;Website Development&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;web-programming&quot;,&quot;prettyName&quot;:&quot;Web Programming&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;spreadsheets&quot;,&quot;prettyName&quot;:&quot;Spreadsheets&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;google-spreadsheet&quot;,&quot;prettyName&quot;:&quot;Google Spreadsheets&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:8119731,&quot;ciphertext&quot;:&quot;~0191eb41f442ec04ad&quot;,&quot;shortName&quot;:&quot;Harshad Vala&quot;,&quot;title&quot;:&quot;PHP, Laravel, AngularJS Developer.&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:harshadvala:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=MpqdvsSb3LDfqCatuf82OEXvh3A%3D\u00261492596858811996&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;India&quot;,&quot;city&quot;:&quot;Surat&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:25},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:4,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;laravel-framework&quot;,&quot;prettyName&quot;:&quot;Laravel Framework&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;angularjs&quot;,&quot;prettyName&quot;:&quot;AngularJS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mysql&quot;,&quot;prettyName&quot;:&quot;MySQL Administration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;bootstrap&quot;,&quot;prettyName&quot;:&quot;Bootstrap&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;api-development&quot;,&quot;prettyName&quot;:&quot;API Development&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;css&quot;,&quot;prettyName&quot;:&quot;CSS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mongodb&quot;,&quot;prettyName&quot;:&quot;MongoDB&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:4472937,&quot;ciphertext&quot;:&quot;~017e6fa1ff402b7cea&quot;,&quot;shortName&quot;:&quot;Dmitry Dyakonov&quot;,&quot;title&quot;:&quot;Hybrid Designer \u0026 Front-end Developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:dvdyakonov:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=qcQ0Htqc3GITjUyxOYAEV1mxC14%3D\u00261448597527162728&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;Russia&quot;,&quot;city&quot;:&quot;Moscow&quot;,&quot;state&quot;:&quot;&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:50},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:11,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;css3&quot;,&quot;prettyName&quot;:&quot;CSS3&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;html5&quot;,&quot;prettyName&quot;:&quot;HTML5&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;jquery&quot;,&quot;prettyName&quot;:&quot;jQuery&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;javascript&quot;,&quot;prettyName&quot;:&quot;JavaScript&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;twitter-bootstrap&quot;,&quot;prettyName&quot;:&quot;Twitter Bootstrap&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;chrome-extension&quot;,&quot;prettyName&quot;:&quot;Chrome Extension&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;unbounce&quot;,&quot;prettyName&quot;:&quot;Unbounce&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;sketch&quot;,&quot;prettyName&quot;:&quot;Sketch&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null},{&quot;recno&quot;:10964654,&quot;ciphertext&quot;:&quot;~01b130620c8180c5ec&quot;,&quot;shortName&quot;:&quot;James Sweeney&quot;,&quot;title&quot;:&quot;LAMP Stack Developer&quot;,&quot;description&quot;:null,&quot;portrait&quot;:&quot;https:\/\/odesk-prod-portraits.s3.amazonaws.com\/Users:jamessweeney:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2\u0026Expires=2147483647\u0026Signature=CxFalP4eYyG6Sp3ZfwBQiJgsKcI%3D\u00261458167996871518&quot;,&quot;location&quot;:{&quot;country&quot;:&quot;United States&quot;,&quot;city&quot;:&quot;Glenwood Springs&quot;,&quot;state&quot;:&quot;CO&quot;},&quot;hourlyRate&quot;:{&quot;amount&quot;:75},&quot;avgFeedbackScore&quot;:null,&quot;lastActivity&quot;:null,&quot;totalHoursBilled&quot;:null,&quot;totalFeedbacks&quot;:7,&quot;totalPortfolioItems&quot;:null,&quot;totalPassedTests&quot;:null,&quot;skills&quot;:[{&quot;skill&quot;:{&quot;name&quot;:&quot;php&quot;,&quot;prettyName&quot;:&quot;PHP&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;laravel-framework&quot;,&quot;prettyName&quot;:&quot;Laravel Framework&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;wordpress&quot;,&quot;prettyName&quot;:&quot;WordPress&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;lamp-administration&quot;,&quot;prettyName&quot;:&quot;LAMP Administration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mysql&quot;,&quot;prettyName&quot;:&quot;MySQL Administration&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;mongodb&quot;,&quot;prettyName&quot;:&quot;MongoDB&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;etl&quot;,&quot;prettyName&quot;:&quot;\u0022Extract, Transform and Load (ETL)\u0022&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;vue.js&quot;,&quot;prettyName&quot;:&quot;Vue.js&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;centos&quot;,&quot;prettyName&quot;:&quot;CentOS&quot;}},{&quot;skill&quot;:{&quot;name&quot;:&quot;ubuntu&quot;,&quot;prettyName&quot;:&quot;Ubuntu&quot;}}],&quot;groups&quot;:null,&quot;agencies&quot;:null,&quot;smallPortrait&quot;:null,&quot;largePortrait&quot;:null,&quot;miniPortrait&quot;:null,&quot;nss100&quot;:1,&quot;highlighting&quot;:null,&quot;evaluationInfo&quot;:null,&quot;totalActualHoursBilled&quot;:null,&quot;rankInfo&quot;:null,&quot;topRatedStatus&quot;:null,&quot;certificates&quot;:null,&quot;assignments&quot;:null,&quot;portfolioItems&quot;:null,&quot;invitationsPermissions&quot;:null,&quot;extendedAgencies&quot;:null,&quot;featurableData&quot;:null,&quot;billedAssignments&quot;:null,&quot;totalRevenue&quot;:null,&quot;combinedTotalRevenue&quot;:null,&quot;totalHourlyJobs&quot;:null,&quot;totalFpJobs&quot;:null,&quot;curAssignments&quot;:null,&quot;hideEarnings&quot;:null,&quot;hideJss&quot;:null,&quot;jobSummariesRids&quot;:null,&quot;combinedTotalEarnings&quot;:null,&quot;combinedRecentEarnings&quot;:null,&quot;combinedAverageRecentEarnings&quot;:null,&quot;combinedRecentCharge&quot;:null,&quot;combinedAverageRecentCharge&quot;:null,&quot;bestMatchServiceUid&quot;:null,&quot;serviceProfiles&quot;:null}],&quot;paging&quot;:1218};vm.init();">
+  <!-- ngRepeat: slide in vm.slides --><div ng-repeat="slide in vm.slides" ng-show="vm.ifVisible($index)" class="profile-slide ng-scope" ng-class="vm.getSlideClass($index)" ng-swipe-left="vm.next()" ng-swipe-right="vm.prev()" style="">
+    <!-- ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01cc0d4319165f0e96" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$30</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_b-roderick_PortraitUrl_100" alt="Brett R.">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Brett R.</p>
+              <p class="profile-title font-gotham-medium ng-binding">Senior ColdFusion Developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~0129a57f8ad710d70c" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$30</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_brhuman_PortraitUrl_100" alt="Maksym Kolesnyk">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Maksym Kolesnyk</p>
+              <p class="profile-title font-gotham-medium ng-binding">Frontend expert HTML5/CSS3 developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01bd9e8ff9dd6b962c" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$31.25</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_sunkari16_PortraitUrl_100" alt="harikrishna sunkari">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">harikrishna sunkari</p>
+              <p class="profile-title font-gotham-medium ng-binding">Full Stack Developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide -->
+  </div><!-- end ngRepeat: slide in vm.slides --><div ng-repeat="slide in vm.slides" ng-show="vm.ifVisible($index)" class="profile-slide ng-scope ng-hide after-slide" ng-class="vm.getSlideClass($index)" ng-swipe-left="vm.next()" ng-swipe-right="vm.prev()" style="">
+    <!-- ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~011e9fb5a39e20b876" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$60</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_costinio_PortraitUrl_100" alt="Konstantinos Andrianopoulos">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Konstantinos Andrianopoulos</p>
+              <p class="profile-title font-gotham-medium ng-binding">Wordpress PageSpeed expert</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~016658dbc916c52ebb" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$15</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_rbelarmino_PortraitUrl_100" alt="Reginald Belarmino">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Reginald Belarmino</p>
+              <p class="profile-title font-gotham-medium ng-binding">Project Manager, QA Tester</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01e9faa921644071dd" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$40</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_vsquash_PortraitUrl_100" alt="Vitalii K.">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Vitalii K.</p>
+              <p class="profile-title font-gotham-medium ng-binding">Full stack web developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide -->
+  </div><!-- end ngRepeat: slide in vm.slides --><div ng-repeat="slide in vm.slides" ng-show="vm.ifVisible($index)" class="profile-slide ng-scope ng-hide after-slide after-next-slide" ng-class="vm.getSlideClass($index)" ng-swipe-left="vm.next()" ng-swipe-right="vm.prev()" style="">
+    <!-- ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01a8692f9a749605ec" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$22.22</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_sajishdaniel_PortraitUrl_100" alt="Sajish Daniel">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Sajish Daniel</p>
+              <p class="profile-title font-gotham-medium ng-binding">PHP Expert</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01ab6a409ed6dd4e29" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$25</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_mehadi_farhad_PortraitUrl_100" alt="Mehadi H.">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Mehadi H.</p>
+              <p class="profile-title font-gotham-medium ng-binding">Top Rated Web Developer - PHP, WordPress Expert &amp; Spreadsheet Champion</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~0191eb41f442ec04ad" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$25</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_harshadvala_PortraitUrl_100" alt="Harshad Vala">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Harshad Vala</p>
+              <p class="profile-title font-gotham-medium ng-binding">PHP, Laravel, AngularJS Developer.</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide -->
+  </div><!-- end ngRepeat: slide in vm.slides --><div ng-repeat="slide in vm.slides" ng-show="vm.ifVisible($index)" class="profile-slide ng-scope ng-hide after-slide" ng-class="vm.getSlideClass($index)" ng-swipe-left="vm.next()" ng-swipe-right="vm.prev()" style="">
+    <!-- ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~017e6fa1ff402b7cea" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$50</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_dvdyakonov_PortraitUrl_100" alt="Dmitry Dyakonov">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">Dmitry Dyakonov</p>
+              <p class="profile-title font-gotham-medium ng-binding">Hybrid Designer &amp; Front-end Developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta --><a href="https://www.upwork.com/o/profiles/users/_~01b130620c8180c5ec" class="font-gotham-bold ng-scope" ng-if="!profile.isCta">
+          <div class="profile-card">
+            <div class="profile-rate font-gotham-light">
+              <span class="font-gotham-bold ng-binding">$75</span>/<span class="font-gotham-medium">hr</span>
+            </div>
+            <div class="profile-image">
+              <img class="img-circle" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_jamessweeney_PortraitUrl_100" alt="James Sweeney">
+            </div>
+            <div class="profile-info">
+              <p class="profile-name ng-binding">James Sweeney</p>
+              <p class="profile-title font-gotham-medium ng-binding">LAMP Stack Developer</p>
+            </div>
+          </div>
+        </a><!-- end ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide --><div ng-repeat="profile in slide" class="ng-scope">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-gutters">
+        <!-- ngIf: !profile.isCta -->
+        <!-- ngIf: profile.isCta --><div class="profile-card text-center ng-scope" ng-if="profile.isCta">
+          <p class="font-gotham-light text-muted">Sign Up</p>
+          <a class="btn btn-primary" href="https://www.upwork.com/signup/create-account/client_direct/">Get Started</a>
+        </div><!-- end ngIf: profile.isCta -->
+      </div>
+    </div><!-- end ngRepeat: profile in slide -->
+  </div><!-- end ngRepeat: slide in vm.slides -->
+  <div class="slide-controls hidden-xs">
+    <a class="slide-prev ng-hide" ng-click="vm.prev()" ng-show="!vm.isFirst">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="slide-next" ng-click="vm.next()" ng-show="!vm.isLast">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+</div></div>
+<h4>TRY THIS OUT IN A DEMO</h4>
+<p>Here is <a href="http://netsh.pp.ua/upwork-demo/1/" target="_blank" rel="noopener">demo</a> for you to try.&nbsp;We have special SQL query, so we can find a city by the name of the city or its zip code. Let’s try ‘Wash’ query:</p>
+<figure><img class="alignnone wp-image-8653" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0-1.png" alt="pasted image 0-1" srcset="https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090906/pasted-image-0-1.png 423w, https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090906/pasted-image-0-1-300x201.png 300w" sizes="(max-width: 423px) 100vw, 423px"></figure>
+<p>Now, let’s try Washington (DC) first ZIP code. 20001</p>
+<figure><img class="alignnone wp-image-8654" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0-2.png" alt="pasted image 0-2" srcset="https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090908/pasted-image-0-2.png 423w, https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090908/pasted-image-0-2-300x118.png 300w" sizes="(max-width: 423px) 100vw, 423px"></figure>
+<p>So, it works!</p>
+<p>If you would like to create your own copy you will need a dump of my demo DB. You can get it here <a href="http://netsh.pp.ua/upwork-demo/1/dump.sql">http://netsh.pp.ua/upwork-demo/1/dump.sql</a> and import it via PhpMyAdmin or someone else MySQL client.</p>
+<figure><a href="https://www.upwork.com/signup/?dest=job-posting&amp;forceHipo=1" target="_blank" rel="noopener"><img class="alignnone wp-image-15743" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/post-a-job-its-free-green-bar.png" alt="Post a job on Upwork. It&#39;s free!" width="255" height="40"></a></figure>
+<span class="et_social_bottom_trigger"></span>
+              </div>
+              <div class="author-details no-gutters col-xs-12">
+                  <div class="author-image">
+      <img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Igor-Photo.jpeg" alt="Igor Chishkala">
+  </div>
+<div class="author-description">
+    <p class="text-uppercase">
+    by <span class="author-name"><a href="https://www.upwork.com/users/~01cfaa4ee38190cc96" itemprop="author">Igor Chishkala</a></span>
+            </p>
+  <div class="hashtags">
+    <ul>
+                </ul>
+  </div>
+  <div class="author-bio no-gutters col-md-10">
+    <p>Igor Chishkala is an Upwork freelancer with 10 years of OpenCart development experience. He is also experienced with Bootstrap, JavaScript, PHP5, HTML5 and CSS3. He… <a href="https://www.upwork.com/hiring/author/igor-chishkala/">more</a></p>
+
+  </div>
+</div>              </div>
+                              <div class="related-skills">
+                  <h4 class="font-gotham-medium text-uppercase">Related Skills</h4>
+                  <ul class="list-unstyled">
+                                                                  <li><a class="text-capitalize" href="https://www.upwork.com/hiring/tag/back-end-development/">back-end development</a></li>
+                                                                                        <li><a class="text-capitalize" href="https://www.upwork.com/hiring/tag/databases/">databases</a></li>
+                                                                                        <li><a class="text-capitalize" href="https://www.upwork.com/hire/php-freelancers/">PHP</a></li>
+                                                            </ul>
+                </div>
+                            <div class="prev-next col-xs-12 no-gutters">
+                                <div class="previous">
+                  <a href="https://www.upwork.com/hiring/customer-stories/instructional-designer-shari-cruz/">Previous article</a>
+                </div>
+                                                <div class="next">
+                  <a href="https://www.upwork.com/hiring/for-clients/6-freelancer-onboarding-tips-every-company-should-know/">Next article</a>
+                </div>
+                              </div>
+              <meta itemprop="datePublished" content="2016-01-25">
+            </article>
+          </section>
+          <!-- / End of Popular Article Single Part -->
+        </div>
+        <div class="row related-articles">
+          <h3 class="font-gotham-medium text-uppercase col-xs-12">Related articles</h3>
+                      <article class="related-article-item col-sm-3">
+	<h4 class="font-gotham-medium text-uppercase">
+  <a href="https://www.upwork.com/hiring/for-clients/frontend-vs-backend-web-development/">Frontend vs Backend Web Development</a></h4>
+	<div class="postmeta">
+		<span class="article-date">February 24, 2017</span>
+	</div>
+	<div class="article-content">
+		<p class="hidden-mobile">When searching for web development jobs, you’ll find a wide variety of requirements. Languages, frameworks, and methodologies may differ, but there are two aspects of web development that will be common for all jobs: frontend and backend. <a href="https://www.upwork.com/hiring/for-clients/frontend-vs-backend-web-development/" class="read-more">Read More</a></p>
+	</div>
+</article>
+                      <article class="related-article-item col-sm-3">
+	<h4 class="font-gotham-medium text-uppercase">
+  <a href="https://www.upwork.com/hiring/development/php-vs-javascript/">PHP vs. JavaScript</a></h4>
+	<div class="postmeta">
+		<span class="article-date">December 22, 2016</span>
+	</div>
+	<div class="article-content">
+		<p class="hidden-mobile">PHP vs JavaScript—what’s the difference? The answer to that question used to be incredibly simple: JavaScript is a client-side script, and PHP is a server-side script. Together they make the dynamic web pages that we know and love possible. In this article, explore the key similarities and differences between these two languages. <a href="https://www.upwork.com/hiring/development/php-vs-javascript/" class="read-more">Read More</a></p>
+	</div>
+</article>
+                      <article class="related-article-item col-sm-3">
+	<h4 class="font-gotham-medium text-uppercase">
+  <a href="https://www.upwork.com/hiring/for-clients/technical-debt-prevention/">Technical Debt Prevention: Best Practices</a></h4>
+	<div class="postmeta">
+		<span class="article-date">August 11, 2017</span>
+	</div>
+	<div class="article-content">
+		<p class="hidden-mobile">Technical debt is a metaphor describing the accumulation of development work on the project. It is quite aptly called a “debt” because it behaves like a real debt. Nobody can completely avoid technical debt, however there are some practices your company can put into place that can minimize your debt. <a href="https://www.upwork.com/hiring/for-clients/technical-debt-prevention/" class="read-more">Read More</a></p>
+	</div>
+</article>
+                      <article class="related-article-item col-sm-3">
+	<h4 class="font-gotham-medium text-uppercase">
+  <a href="https://www.upwork.com/hiring/data/postgresql-vs-mysql/">PostgreSQL vs. MySQL: Finding the Right Expert for Your Project</a></h4>
+	<div class="postmeta">
+		<span class="article-date">December 1, 2017</span>
+	</div>
+	<div class="article-content">
+		<p class="hidden-mobile">In the world of SQL databases there are a few standouts, and today we’re going to look at two of them: PostgreSQL and MySQL. We’ll look at where each of these database management systems excel and what kinds of projects each might be best suited to. <a href="https://www.upwork.com/hiring/data/postgresql-vs-mysql/" class="read-more">Read More</a></p>
+	</div>
+</article>
+                  </div>
+        <div class="col-xs-12 bottom-widget-wrapper">
+          
+        </div>
+      </div>
+    <!-- / End of Popular Articles -->
+    </div>
+  </section>
+    <!-- / End of Content Part -->
+  </main>
+    </main>
+
+    <section class="footer-primary bg-dark-grey visible-lg ng-scope">
+	<div class="container">
+		<div class="row col-lg-12 footer-links">
+			<section class="row inline-categories">
+				<div class="col-lg-2">
+					<h4 class="text-uppercase">Sections</h4>
+				</div>
+				<div class="col-lg-10">
+					<ul class="list-inline list-unstyled">
+                                    <li><a href="https://www.upwork.com/hiring/admin-support/">Admin Support</a></li>
+                                                                      <li><a href="https://www.upwork.com/hiring/community/">Community</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/customer-stories/">Customer Stories</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/customer-support/">Customer Support</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/data/">Data</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/design/">Design</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/education/">Education</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/enterprise/">Enterprise Solutions</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/finance/">Finance</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/for-clients/">For Clients</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/for-freelancers/">For Freelancers</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/legal/">Legal</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/marketing/">Marketing</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/mobile/">Mobile Development</a></li>
+                                                                                            <li><a href="https://www.upwork.com/hiring/startup/">Starting Up</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/trends/">Trends</a></li>
+                                                <li><a href="https://www.upwork.com/hiring/development/">Web Development</a></li>
+                      					</ul>
+					<ul class="list-inline sub-categories list-unstyled">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    					</ul>
+				</div>
+			</section>
+      <section class="row inline-categories">
+        <div class="col-lg-2">
+          <h4 class="text-uppercase">Additional</h4>
+        </div>
+        <div class="col-lg-10">
+          <ul class="list-inline list-unstyled">
+                          <li>
+                <a title="Blog" href="https://www.upwork.com/blog/">Blog</a>
+              </li>
+                          <li>
+                <a title="Authors" href="https://www.upwork.com/hiring/authors/">Authors</a>
+              </li>
+                          <li>
+                <a title="Syndicate Your Blog" href="https://www.upwork.com/hiring/promote-blog-posts-hiring-hq/?utm_campaign=HHQ%20mobile&amp;utm_source=HHQ&amp;utm_medium=content">Syndicate Your Blog</a>
+              </li>
+                          <li>
+                <a title="Sign Up For Email" href="https://www.upwork.com/hiring/subscribe-to-email/">Sign Up For Email</a>
+              </li>
+                          <li>
+                <a title="Post a Job" href="https://www.upwork.com/signup/create-account/client_post_job?utm_campaign=HHQ%20mobile&amp;utm_source=HHQ&amp;utm_medium=content">Post a Job</a>
+              </li>
+                          <li>
+                <a title="Resources" href="https://www.upwork.com/i/hiring-guides/">Resources</a>
+              </li>
+                      </ul>
+        </div>
+      </section>
+			
+			
+	</div>
+</div></section>
+    <footer class="footer-navbar bg-dark-grey ng-scope" role="contentinfo">
+      <div class="container">
+        <div class="row footer-links visible-lg">
+          <div class="col-lg-4">
+            <div class="links-column pull-left">
+              <h4 class="text-uppercase">Company Info</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.upwork.com/about/">About Us</a></li>
+                <li><a href="https://www.upwork.com/press/">Press</a></li>
+                <li><a href="https://www.upwork.com/about/careers/">Careers</a></li>
+                <li><a href="https://www.upwork.com/blog/">Upwork Blog</a></li>
+                <li><a href="https://www.upwork.com/legal/terms/">Terms of Service</a></li>
+                <li><a href="https://www.upwork.com/legal/privacy/">Privacy Policy</a></li>
+                <li><a href="https://www.upwork.com/hiring/" target="_blank">Hiring Headquarters</a></li>
+                <li><a target="_blank" href="https://www.upwork.com/press/quarterly-skills-index/">Quarterly Skills Index</a></li>
+                <li><a href="https://www.upwork.com/i/trust-safety-mission/">Trust &amp; Safety</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center">
+            <div class="links-column text-left">
+              <h4 class="text-uppercase">Additional Services</h4>
+              <ul class="list-unstyled">
+                <li><a href="http://ptc.elance.com/" target="_blank">Enterprise Solutions</a></li>
+                <li><a href="https://www.upwork.com/pro/?utm_campaign=HHQ-content&amp;utm_source=main%20footer&amp;utm_medium=content" target="_blank">Upwork Pro</a></li>
+                <li><a href="https://www.upwork.com/i/business-resources/" target="_self">Local Business Resources</a></li>
+              </ul>
+
+              <h4 class="text-uppercase">Connect with us</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://support.upwork.com/">Contact &amp; Support</a></li>
+                <li><a href="https://developers.upwork.com/">API Center</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="links-column pull-right">
+              <h4 class="text-uppercase">Browse</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.upwork.com/i/freelancer-categories/">Freelancers by Skill</a></li>
+                <li><a href="https://www.upwork.com/local/united-states/">Freelancers in USA</a></li>
+                <li><a href="https://www.upwork.com/local/united-kingdom/">Freelancers in UK</a></li>
+                <li><a href="https://www.upwork.com/local/canada/">Freelancers in Canada</a></li>
+                <li><a href="https://www.upwork.com/local/australia/">Freelancers in Australia</a></li>
+                <li><a href="https://www.upwork.com/o/job-categories/">Find Jobs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row footer-social text-center visible-lg">
+          <h4 class="font-gotham-book-italic">Follow us</h4>
+          <ul class="social-links list-inline"><li class="gplus"><a href="https://plus.google.com/+Upwork" target="_blank" title="Add Upwork to Google+ circles"></a></li><li class="twitter"><a href="https://twitter.com/Upwork" target="_blank" title="Follow @upwork on Twitter"></a></li><li class="linkedin"><a href="https://www.linkedin.com/company/upwork" target="_blank" title="Read Upwork company news on LinkedIn"></a></li><li class="facebook"><a href="https://www.facebook.com/upwork" target="_blank" title="Visit Upwork on Facebook"></a></li><li class="youtube"><a href="http://www.youtube.com/c/upwork" target="_blank" title="Watch Upwork videos on YouTube"></a></li></ul>        </div>
+        <div class="row footer-mobile hidden-lg">
+          <nav class="footer-mobile-links text-center">
+            <ul class="list-inline"><li><a href="https://www.upwork.com/login">Log In</a></li><li><a href="https://www.upwork.com/signup/create-account">Sign Up</a></li><li><a href="https://www.upwork.com/legal/">Terms &amp; Conditions</a></li></ul>          </nav>
+        </div>
+        <div class="row footer-colophon text-center">
+          <p>© 2015 - 2018 Upwork Global Inc.</p>
+        </div>
+      </div>
+  </footer>
+  </div></div>
+  
+
+  <div class="et_social_pin_images_outer">
+					<div class="et_social_pinterest_window">
+						<div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close"></span></div>
+						<div class="et_social_pin_images" data-permalink="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/" data-title="Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL" data-post_id="8419"><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=//components.elance-odesk.com/marketing-ui/master/img/upwork-logo.svg&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/upwork-logo.svg" alt="Upwork"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2017/12/31195223/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-940x400.jpg&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Creating-Autocomplete-or-Search-Suggestion-Functionality-with-PHP-and-MySQL-feature-940x400.jpg" alt="Image for Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2016/01/22103222/pasted-image-0.png&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0.png" alt="example of PHP search suggestion function"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:b-roderick:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=NtLau5uv8Q7Z1Lo4bOyre%2BuHxeQ%3D&amp;1437347349094307&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_b-roderick_PortraitUrl_100" alt="Brett R."><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:brhuman:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=yxY%2FmYTeqFBEroz97JNdoi2iqV8%3D&amp;1459033745851088&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_brhuman_PortraitUrl_100" alt="Maksym Kolesnyk"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:sunkari16:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=eQPG8WZRuensvJaPHrJvGeMqUsk%3D&amp;1438412245890572&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_sunkari16_PortraitUrl_100" alt="harikrishna sunkari"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:costinio:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=%2Bjutdx88yyFsIkX3KflYiQKu3Qk%3D&amp;1493552796266717&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_costinio_PortraitUrl_100" alt="Konstantinos Andrianopoulos"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:rbelarmino:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=1jSP4eJRc%2FlZYUjKz989gyvdGnU%3D&amp;1484202772898647&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_rbelarmino_PortraitUrl_100" alt="Reginald Belarmino"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:vsquash:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=imP%2Ft0WzTb4cXPBFfhXU3b7Q%2BYo%3D&amp;1443278929734361&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_vsquash_PortraitUrl_100" alt="Vitalii K."><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:sajishdaniel:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=riRUN9DaZ2kqfP6UoDDfSugFLqk%3D&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_sajishdaniel_PortraitUrl_100" alt="Sajish Daniel"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:mehadi_farhad:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=vVYmOtr7XlOHWtX8A9lFrozWo2A%3D&amp;1464262948479219&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_mehadi_farhad_PortraitUrl_100" alt="Mehadi H."><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:harshadvala:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=MpqdvsSb3LDfqCatuf82OEXvh3A%3D&amp;1492596858811996&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_harshadvala_PortraitUrl_100" alt="Harshad Vala"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:dvdyakonov:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=qcQ0Htqc3GITjUyxOYAEV1mxC14%3D&amp;1448597527162728&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_dvdyakonov_PortraitUrl_100" alt="Dmitry Dyakonov"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://odesk-prod-portraits.s3.amazonaws.com/Users:jamessweeney:PortraitUrl_100?AWSAccessKeyId=1XVAX3FNQZAFC9GJCFR2&amp;Expires=2147483647&amp;Signature=CxFalP4eYyG6Sp3ZfwBQiJgsKcI%3D&amp;1458167996871518&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Users_jamessweeney_PortraitUrl_100" alt="James Sweeney"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090906/pasted-image-0-1.png&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0-1.png" alt="pasted image 0-1"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2016/01/25090908/pasted-image-0-2.png&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pasted-image-0-2.png" alt="pasted image 0-2"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2016/11/17140510/post-a-job-its-free-green-bar.png&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/post-a-job-its-free-green-bar.png" alt="Post a job on Upwork. It&#39;s free!"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://content-static.upwork.com/blog/uploads/sites/3/2015/09/03122530/Igor-Photo.jpeg&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/Igor-Photo.jpeg" alt="Igor Chishkala"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://d.company-target.com/pixel?type=js&amp;id=1485984431&amp;page=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pixel" alt=""><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/&amp;media=https://d.company-target.com/pixel?type=js&amp;id=1485984517&amp;page=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;description=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="8419" data-social_type="share"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pixel(1)" alt=""><span class="et_social_pin_overlay et_social_icon"></span></a></div></div>
+					</div>
+				</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_simple et_social_sidebar_withcounts et_social_mobile_on" style="top: 150.5px;">
+					
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;t=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>11</span></div></a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;t=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count">
+						<span>1</span>
+					</div></a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;title=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count">
+						<span>0</span>
+					</div></a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL&amp;url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;via=" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="8419" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										<div class="et_social_count">
+						<span>8</span>
+					</div>
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/#" class="et_social_share_pinterest et_social_display_count" rel="nofollow" data-social_name="pinterest" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count">
+						<span>0</span>
+					</div></a>
+								</li><li class="et_social_gmail">
+									<a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL&amp;body=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="8419" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_gmail"></i>
+										
+										<div class="et_social_count">
+						<span>7</span>
+					</div>
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div><div class="et_social_mobile_button"></div>
+					<div class="et_social_mobile et_social_fadein">
+						<div class="et_social_heading">Share This</div>
+						<span class="et_social_close"></span>
+						<div class="et_social_networks et_social_simple et_social_rounded et_social_left et_social_withcounts" style="display: none; max-height: 85px; height: 85px;">
+							<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;t=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div>
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>11</span></div></a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;t=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Google+</div><div class="et_social_count">
+						<span>1</span>
+					</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;title=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div><div class="et_social_count">
+						<span>0</span>
+					</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL&amp;url=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;via=" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="8419" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div><div class="et_social_count">
+						<span>8</span>
+					</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_pinterest">
+									<a href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/#" class="et_social_share_pinterest et_social_display_count" rel="nofollow" data-social_name="pinterest" data-post_id="8419" data-social_type="share" data-location="sidebar" data-min_count="0">
+										<i class="et_social_icon et_social_icon_pinterest"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div><div class="et_social_count">
+						<span>0</span>
+					</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_gmail">
+									<a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=Creating%20Autocomplete%20or%20Search%20Suggestion%20Functionality%20with%20PHP%20and%20MySQL&amp;body=https%3A%2F%2Fwww.upwork.com%2Fhiring%2Fdevelopment%2Fcreating-autocomplete-functionality-with-php-and-mysql%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="8419" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_gmail"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Gmail</div><div class="et_social_count">
+						<span>7</span>
+					</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+						</div>
+					</div>
+					<div class="et_social_mobile_overlay"></div>	<div style="display:none">
+	</div>
+        <script type="text/javascript">
+            var ajaxurl = 'https://www.upwork.com/hiring/ajax-api/';
+        </script>
+    <script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/devicepx-jetpack.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/idle-timer.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/www.upwork.com\/hiring\/ajax-api\/","pageurl":"https:\/\/www.upwork.com\/hiring\/development\/creating-autocomplete-functionality-with-php-and-mysql\/","stats_nonce":"5580737922","share_counts":"48d333f24a","follow_counts":"a37c5364c7","total_counts":"9715c5fca3","media_single":"0e5e9af2f3","media_total":"8035cf2008","generate_all_window_nonce":"c46cbaa7be","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/custom.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/sessioncam.js.download"></script><iframe src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/a183139605.html" hidden="" aria-hidden="true" tabindex="-1" height="0" width="0" style="display: none;" class=" bf_frame_init"></iframe>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","//connect.facebook.net/en_US/fbevents.js");fbq("init","816554411748126");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=816554411748126&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+
+</noscript>
+<script type="text/javascript" id="">var DATALAYER_OBJECT_NAME="dataLayer",referrerOverride=function(c){var b=window[DATALAYER_OBJECT_NAME]||[];b.push({event:"optimizely-referrer-override","optimizely-referrer":c})},sendCampaignData=function(c,b,g,h,d,k,a,f,e){if(h=optimizely.get("data")&&optimizely.get("data").campaigns[b]&&optimizely.get("data").campaigns[b].integrationSettings&&optimizely.get("data").campaigns[b].integrationSettings.google_universal_analytics&&optimizely.get("data").campaigns[b].integrationSettings.google_universal_analytics.universal_analytics_slot)c=
+c?c+"("+b+")":b,g=g.join(","),d=d?d+"("+k+")":g+"("+k+")",a=a?a+"("+f+")":f,e=e?"holdback":"treatment",e=[c,d,a,e].join(":"),a=window[DATALAYER_OBJECT_NAME]||[],a.push({event:"campaign-decided","optimizely-dimension-value":e,"optimizely-dimension-number":h})},initNewOptimizelyIntegration=function(c,b){var g=!1,h=function(k){var a=window.optimizely.get&&window.optimizely.get("state"),f=a.getRedirectInfo()&&a.getRedirectInfo().referrer;!g&&f&&(c(f),g=!0);a=a.getCampaignStates({isActive:!0});a=a[k];
+f=a.campaignName;if(0<a.audiences.length){var e=a.audiences.map(function(a){return a.name});var d=a.audiences.map(function(a){return a.id})}else e=["everyone_else"],d=[0];var h=a.experiment.name,l=a.experiment.id,m=a.variation.name,n=a.variation.id;b(f,k,e,d,h,l,m,n,a.isInCampaignHoldback)},d=function(){window.optimizely=window.optimizely||[];window.optimizely.push({type:"addListener",filter:{type:"lifecycle",name:"campaignDecided"},handler:function(b){b=b.data.campaign.id;h(b)}})};d()},initOptimizelyIntegration=
+function(c,b){initNewOptimizelyIntegration(c,b)};initOptimizelyIntegration(referrerOverride,sendCampaignData);</script><script type="text/javascript" id="">var e=document.createElement("script");e.async=!0;e.src="https://ad.atdmt.com/m/a.js;m\x3d11257200767709;cache\x3d"+Math.random()+"?value\x3d{value}\x26event_name\x3d{event_name}\x26content_name\x3d{content_name}\x26content_category\x3d{content_category}\x26content_ids\x3d{content_ids}\x26content_type\x3d{content_type}\x26num_items\x3d{num_items}\x26search_string\x3d{search_string}\x26currency\x3d{currency}\x26status\x3d{status}";var s=document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(e,s);</script>
+    <noscript>
+    &lt;iframe style="display:none;" src="https://ad.atdmt.com/m/a.html;m=11257200767709;noscript=1?value={value}&amp;amp;event_name={event_name}&amp;amp;content_name={content_name}&amp;amp;content_category={content_category}&amp;amp;content_ids={content_ids}&amp;amp;content_type={content_type}&amp;amp;num_items={num_items}&amp;amp;search_string={search_string}&amp;amp;currency={currency}&amp;amp;status={status}"&gt;
+    &lt;/iframe&gt;
+    </noscript><script type="text/javascript" id="">var br_data={acct_id:"5407",ptype:"other",cat_id:"",cat:"",sku:"",search_term:"",is_conversion:"0",basket_value:"",order_id:"",prod_id:"",prod_name:""};
+(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https:"==document.location.protocol?"https://cdns.brsrvr.com/v1/br-trk-5407.js":"http://cdn.brcdn.com/v1/br-trk-5407.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="">_airpr={id:"400037",ga_dim:"74",ga_account_preset:"UA-62227314-1"};(function(c,d,a,b){a=c.createElement(d);a.async=1;a.src="//px.airpr.com/airpr.js";b=c.getElementsByTagName(d)[0];b.parentNode.insertBefore(a,b)})(document,"script");</script><script type="text/javascript" id="">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn.walkme.com/users/c0b053739f5b4828beee401206a0f930/walkme_c0b053739f5b4828beee401206a0f930_https.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);window._walkmeConfig={smartLoad:!0}})();</script><script type="text/javascript" id="">var _sift=window._sift=window._sift||[];_sift.push(["_setAccount","8a85679da2"]);_sift.push(["_setUserId",""]);_sift.push(["_setSessionId",google_tag_manager["GTM-K7572X"].macro('gtm5')]);_sift.push(["_trackPageview"]);(function(){function a(){var a=document.createElement("script");a.src="https://cdn.siftscience.com/s.js";document.body.appendChild(a)}window.attachEvent?window.attachEvent("onload",a):window.addEventListener("load",a,!1)})();</script>
+<script type="text/javascript" id="">var bfId="YhhzS5X9rq95Wq6p",bfSession=.041666666666666664;(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===document.location.protocol?"https://":"http://")+"munchkin.brightfunnel.com/js/build/bf-munchkin.min.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script>
+<script type="text/javascript" id="">(function(){window._pxAppId="PXSs13U803";if("undefined"!=="undefined")window._pxParam1="undefined";var p=document.getElementsByTagName("script")[0],s=document.createElement("script");s.async=1;s.src="//client.perimeterx.net/PXSs13U803/main.min.js";p.parentNode.insertBefore(s,p)})();</script><script type="text/javascript" id="">_linkedin_data_partner_id="63814";</script><script type="text/javascript" id="">(function(){var b=document.getElementsByTagName("script")[0],a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=63814&amp;amp;fmt=gif"&gt;
+</noscript><script type="text/javascript" id="">window._tfa=window._tfa||[];_tfa.push({notify:"mark",type:"Upwork_Retargeting_Pixel"});</script>
+<script type="text/javascript" id="" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/tfa.js.download"></script>
+
+<script type="text/javascript" id="">!function(d,e,f,a,b,c){d.qp||(a=d.qp=function(){a.qp?a.qp.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=document.createElement(e),b.async=!0,b.src=f,c=document.getElementsByTagName(e)[0],c.parentNode.insertBefore(b,c))}(window,"script","https://a.quora.com/qevents.js");qp("init","82de7146d5c84e3489aeb7b3c62256a3");qp("track","ViewContent");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/82de7146d5c84e3489aeb7b3c62256a3/pixel?tag=ViewContent&amp;amp;noscript=1"&gt;</noscript>
+<script type="text/javascript" id="">(function(){window.walkme_event=function(a){"FlowStarted"!=a.Type&&"BeforeExecutingFlowStage"!=a.Type||50033!=a.ExtraData.flowId||$zopim.livechat.window.show()}})();</script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/core.0.5.8.min.js.download"></script>
+<script type="text/javascript">
+angular.module('uiApplet', ['components.core.log', 'marketing.global']);
+</script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/global.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/bowser.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/outdated.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/salvattore.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/quickshare.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/forms2.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/app.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/form-helpers.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/hipo-reg.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/angular-touch.min.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/upwork-widgets.js.download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/wp-embed.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"hhq"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/count.js(1).download"></script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/munchkin.js(1).download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var marketo_vars = {"munchkin_id":"518-RKL-392"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/marketo.js.download"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+            if($('.et_social_display_count').length){
+                let element = $('.et_social_facebook a');
+                let shareUrl = location.href;
+                $.getJSON('//graph.facebook.com/?id=' + shareUrl)
+                    .success(function(data){
+                        element.append('<div class="et_social_count"><span>' + data.share.share_count + '</span></div>');
+                        $.post(
+                            ajaxurl, 
+                            {
+                                'action': 'monarch_add_fb_count',
+                                'data': data.share.share_count,
+                                'post_id': $('.et_social_facebook [data-post_id]').data('post_id')
+                            });
+                    });
+            }
+        });
+    </script>
+
+        <!--QUIZ_EMBEDER START-->
+                    <!--QUIZ_EMBEDER START-->
+            <link rel="stylesheet" href="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/colorbox.css">
+            <script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/jquery.colorbox-min.js.download"></script>
+        
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                                //Examples of how to assign the ColorBox event to elements
+
+                var box_default_width = parseInt('80%');
+                var box_default_height = parseInt('80%');
+
+                $('.colorbox_iframe').on('click', function (event) {
+                    //check for small devices
+
+                    if ($(window).width() <= 769) {
+                        if (!$(this).data('allowmobile')) {
+                            event.preventDefault();
+                            event.stopPropagation();
+
+                            var modal = $('#module_modal');
+                            $('body').addClass('modal-open');
+                            modal.fadeIn(200);
+
+                            modal.find('.btn').click(function () {
+                                $('body').removeClass('modal-open');
+                                modal.fadeOut(200);
+                            });
+
+                            return false;
+                        }
+                    }
+                }).each(function () {
+                    var _this = $(this);
+
+                    if (_this.data('allowmobile')) {
+                        _this.colorbox({
+                            iframe: true,
+                            width: box_default_width,
+                            height: box_default_height,
+                            transition: 'elastic',
+                            scrolling: 1,
+                            className: 'allowmobile',
+                            onComplete: function (element) {
+                                $.colorbox.resize({
+                                    width: getBoxWidth(_this, $(window).width(), box_default_width),
+                                    height: getBoxHeight(_this, $(window).height(), box_default_height)
+                                });
+                            }
+                        });
+                    } else {
+                        _this.colorbox({
+                            iframe: true,
+                            width: _this.data('width') == void 0 || _this.data('width') == ''
+                                ? box_default_width
+                                : parseInt(_this.data('width')),
+                            height: _this.data('height') == void 0 || _this.data('width') == ''
+                                ? box_default_height
+                                : parseInt(_this.data('height')),
+                            transition: 'elastic',
+                            scrolling: 1                        });
+                    }
+                });
+
+                $(window).resize(function () {
+                    var _this = $(this);
+                    var _colorbox = $('#colorbox');
+
+                    if (_colorbox.is(':visible') && _colorbox.hasClass('allowmobile')) {
+                        $.colorbox.resize({
+                            width: getBoxWidth($.colorbox.element(), _this.width(), box_default_width),
+                            height: getBoxHeight($.colorbox.element(), _this.height(), box_default_height)
+                        });
+                    }
+                });
+
+                function getBoxWidth(elem, scr_width, def_width) {
+                    var given_width = elem.data('width') == void 0 || elem.data('width') == ''
+                        ? 0
+                        : parseInt(elem.data('width'));
+
+                    return given_width
+                        ? (scr_width <= given_width ? scr_width : given_width)
+                        : (scr_width <= def_width ? scr_width : def_width);
+                }
+
+                function getBoxHeight(elem, scr_height, def_height) {
+                    var given_height = elem.data('height') == void 0 || elem.data('height') == ''
+                        ? 0
+                        : parseInt(elem.data('height'));
+
+                    return given_height
+                        ? (scr_height <= given_height ? scr_height : given_height)
+                        : (scr_height <= def_height ? scr_height : def_height);
+                }
+                
+            });
+        </script>
+        <!--QUIZ_EMBEDER END-->
+        <script type="text/javascript" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/e-201805.js.download" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.7.1',blog:'94465220',post:'8419',tz:'-8',srv:'www.upwork.com'} ]);
+	_stq.push([ 'clickTrackerInit', '94465220', '8419' ]);
+</script>
+
+
+    
+  <div class="outdated-browser-popup hidden-xs hidden-sm" id="outdated-browser-popup">
+  <div class="container">
+    <a href="https://www.upwork.com/hiring/development/creating-autocomplete-functionality-with-php-and-mysql/#" class="btn-close-update-browser" title="Close">×</a>
+    <i class="icon-warning"></i>
+    <h1 class="font-gotham-bold">Your browser is not supported</h1>
+    <p class="text-overview font-gotham-medium">To access essential Upwork features, you'll need to update your browser.</p>
+    <a class="btn btn-default btn-update-browser" href="http://outdatedbrowser.com/">Update my browser</a>
+  </div>
+</div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8e23a381b9","applicationID":"69924466","transactionName":"NVxRMRBYVhBXUhBQDAwWcgYWUFcNGUINVwQOXA==","queueTime":0,"applicationTime":866,"atts":"GRtSR1hCRR4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><script type="text/javascript" id="">(function(a,b,c,d,e){a=b.createElement(c);b=b.getElementsByTagName(c)[0];a.async=1;a.id=e;a.src=("https:"==document.location.protocol?"https://":"http://")+d;b.parentNode.insertBefore(a,b)})(window,document,"script","scripts.demandbase.com/B3KhiJdo.min.js","demandbase_js_lib");</script><div style="display: none; visibility: hidden;">
+<script type="text/javascript">var _kiq=_kiq||[];(function(){setTimeout(function(){var a=document,b=a.getElementsByTagName("script")[0];a=a.createElement("script");a.type="text/javascript";a.async=!0;a.src="//s3.amazonaws.com/ki.js/58403/dsG.js";b.parentNode.insertBefore(a,b)},1)})();var isLoggedIn=google_tag_manager["GTM-K7572X"].macro('gtm3');console.log("Logged In:",isLoggedIn);isLoggedIn||_kiq.push(["set",{signed_in:!1}]);</script></div><div style="display: none; visibility: hidden;"><script type="text/javascript">window._troq=window._troq||[];_troq.push(["tagid","6563065-d6b488b73a2d2dbfab76ce075e6793ce"],["_rtgpg","\/hiring\/development\/creating-autocomplete-functionality-with-php-and-mysql\/"],["_rtgvisitorid",""],["_rtgidcountry","US"],["_rtglanguage","EN"],["_rtgcustomerid","undefined"],["_rtgmobile","0"],["_rtgregistered","1"]);
+(function(){if(1!==window._troqck){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//mmtro.com/tro.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}})();</script></div><div id="px__8ab3e6d8-9f23-4d93-acef-69ff4345f738" style="position: absolute; top: -5000px; left: -5000px;"><object id="px__0a0bce6b-f451-4f84-924a-daf42fa113a8" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></object><span id="px__e7c75d1c-aeee-4cd1-b3f3-fb91af4466ba" style="font-family: &quot;Wingdings 3&quot;, &quot;Andale Mono&quot;; font-size: 200px; visibility: hidden;">The quick brown fox jumps over the lazy dog.</span></div><img style="display:none" alt="" aria-hidden="true" id="db_pixel_ad" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pixel"><img style="display:none" alt="" aria-hidden="true" id="db_pixel_rt" src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pixel(1)"><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/s.js.download"></script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/saved_resource(1)" type="text/javascript"></script><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/saved_resource(2)" type="text/javascript"></script><script type="text/javascript" id="">setTimeout(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0029/8410.js?"+Math.floor((new Date).getTime()/36E5);a.async=!0;a.type="text/javascript";b.parentNode.insertBefore(a,b)},1);</script><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/seg" width="1" height="1" border="0" alt="" style="display: none;"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/pixel(2)" width="1" height="1" border="0" alt="" style="display: none;"><img src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/g.gif" alt=":)" width="6" height="5" id="wpstats"><script src="./Creating Autocomplete or Search Suggestion Functionality with PHP and MySQL_files/adsct" type="text/javascript"></script></body></html>

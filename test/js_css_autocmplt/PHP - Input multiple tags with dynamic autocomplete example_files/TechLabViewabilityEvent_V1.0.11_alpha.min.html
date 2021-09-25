@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)https://s0.2mdn.net/ads/richmedia/studio/37408878/TechLabViewabilityEvent_V1.0.11_alpha.min.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 
+// HTML Document
+// HTML5 Tech Lab solution by Google
+// Viewability Solution based on requestAnimationFrame checks
+// Created by eduque@
+-->
+<style>
+body,html{
+  margin:0;
+  border:0;
+}
+canvas{
+    height: 5px;
+    width: 5px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+  <script>
+var requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(function(){a(Date.now())},1E3/frameRate)},cancelAnimationFrame=window.cancelAnimationFrame||window.mozCancelAnimationFrame||window.msCancelAnimationFrame||window.webkitCancelAnimationFrame;
+function animate(a){requestAnimationFrame(animate);var b=a-lastDrawTime;b>fpsInterval&&(lastDrawTime=a-b%fpsInterval,frameCount++,ctx.beginPath(),ctx.moveTo(0,0),ctx.lineTo(5,5),ctx.stroke(),lastDrawTime=(new Date).getMilliseconds())}var fps=25,canvas,ctx,fpsInterval,lastDrawTime,frameCount_timed,frameCount,lastSampleTime,currentFps=0,currentFps_timed=0,intervalID,requestID;
+function startAnimating(a,b){canvas=document.getElementById("myCanvas");ctx=canvas.getContext("2d");ctx.fillStyle="#000";ctx.fillRect(0,0,canvas.width,canvas.height);fpsInterval=1E3/a;lastSampleTime=lastDrawTime=(new Date).getMilliseconds();frameCount=0;animate();intervalID=setInterval(sampleFps,b)}var lastDiff=0,oldStatus="isNotVisible",newStatus="isNotVisible";function isExplorer(){return/msie|trident/g.test(navigator.userAgent.toLowerCase())}var isIE=!1;
+function sampleFps(){var a=(new Date).getMilliseconds(),a=Math.abs(lastDrawTime-a);newStatus=50<=a+lastDiff?"isNotVisible":"isVisible";if(newStatus!=oldStatus){oldStatus=newStatus;try{parent.readyToGo(newStatus)}catch(b){}}lastDiff=a}setTimeout(startAnimating(25,500),1E3);
+</script>
+
+</body></html>

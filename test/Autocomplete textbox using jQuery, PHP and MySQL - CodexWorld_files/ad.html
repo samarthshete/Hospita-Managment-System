@@ -1,0 +1,302 @@
+
+<!-- saved from url=(1072)https://ad.hockeycurve.com/ad.php?zoneid=336x280&client=voot&partner=dbm&fcat=content&device=desktop&ct0=https://googleads.g.doubleclick.net/dbm/clk%3Fsa%3DL%26ai%3DCyaDUJUJxWpTrJseJ8gXZ2o-ICeeQ8JxQ65fo-K0Grr_Z69QIEAEgvO6HGmDl-uaDvA6gAaHYg5EDyAEJqQIRiCzbTOFQPqgDAaoEygFP0IDQvmeeJBO2cogf0LzjuWO8xSsVg-dR26mp2XRZ1Dmom5uBztXVODNW7v51o8KYkqbpH-QwZBLDcGl405YmzMD4drucAQdI60AW6xGtP72auL5oFmFz-YobFkQTA80aYTw4rnG4YMh9j2nBLozvXRBg_wFG6uepkICRsGNxl_4m6o_ieX0ZknwMyfWPf554MrsK-PjSVR1SaL9ADPymyHYU6b8PHfoCOpYchuhD49qHJ0IIFZrGV5qHdkTZmR9ajm2nA_L0yROW4AQDkAYBoAZNgAfHp_xuqAemvhvYBwDSCAcIgGEQARgCgAoB2BMQ%26num%3D1%26cid%3DCAASEuRo3C1cdODHOaDt830_wh4oMg%26sig%3DAOD64_1NQUnHiHWdIByJ1i4Y1uzIbgEySg%26client%3Dca-pub-5750766974376423%26dbm_c%3DAKAmf-BxGk5lBVp4e21Zb51UIv50lpyi22gLfVZrBUHnWPUgRMX3bCEI8YStvA00m1i55ZLcVMd9%26dbm_d%3DAKAmf-CL6Th8xCZDz4x-dGfs2HzzGleM8ruC3jHrMYOgyL_g7eoLCLlqIF1Vf_ii1IGwmiBcdTsO9k32PnfZ6eTxku6aAfQ-QEQ_XmKvUdwYjeR4kDzpFcqZxWxSFT_W_Z7BSs7KXbZkE4Q6OKBdQq_pf4iYhBGPm9XE-wKFxRp13MzKA8D3AvW1QNSVibnR5bdxD7sAt9LeUdkqrNI4BxCkCnYL6aSncw%26adurl%3D&cb=1517371941636308 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+    @font-face {
+        font-family: 'AlwynNewRd';
+        src: url('https://s.hcurvecdn.com/fonts/AlwynNewRd-Rg.otf');
+    }
+</style> 
+<style type="text/css">
+
+	#box{
+		width: 336px;
+		height: 280px;
+		position: absolute;
+		overflow: hidden;
+		left:0px;
+		top:0px;
+		font-family: "AlwynNewRd";
+		user-select: none;
+		border:0.1px solid;
+		cursor: pointer
+	}
+	.background{
+		width: 336px;
+		height: 280px;
+		position: absolute;
+		background-image: url("https://s.hcurvecdn.com/voot/temp/voot_336x280_v3.png");
+		background-size: cover;
+		overflow: hidden;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	/*background-color: #f7f900;*/
+	}
+	a{
+	    text-decoration: none;
+	}
+	
+	.list-item{
+		position: relative;
+		width: 313px;
+		display: inline-block;
+		background: white;
+		height: 178px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	.img{
+		height:178px;
+		width:100%;
+		background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	text-align: center;
+	}
+	.heading{
+		font-size: 10px;
+		background: #fcc7d4;
+		width: 100%;
+		text-align: left;
+		padding-top: 0px;
+		font-weight:500;
+		color: black;
+		letter-spacing: .3px
+	}
+	
+	.item-name{
+		width: 180px;
+		font-size: 14px;
+		text-align: left;
+		padding: 2px 0px 0px 0px;
+		height: 15px;
+		display: -webkit-box;
+        margin: 2px auto;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        color: white;
+        font-weight: 500;
+	}
+	
+	.grid {
+	    flex:1;
+	    display:flex;
+	    justify-content:space-between;
+	    flex-direction:column;
+	}
+
+	
+@keyframes bounce {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+</style>
+</head><body>
+<div id="template" style="display:none">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="1" cols="1" class="grid" style="margin:12px;">
+    	<div class="list-item" onclick="openUrl(event,&#39;$(self_url)&#39;)" style="height:280px">
+		  <div style="position:relative;margin-top:43px">
+			<div class="img" style="z-index:1000;background-image:url($(self_image))"></div>
+			<div class="item-name" style="z-index:100;left:5px;text-align:left;position:absolute;top:178px">$(self_heading)</div>
+		  </div>
+		</div>
+		
+	</div>
+		<div style="pointer-events:none;font-size:16px;z-index:100;top:14px;position:absolute;text-align:center;width:270px;left:34px;color:black">Bigg Boss S11 - Trending</div>
+		
+		<!--<div style="pointer-events:none;font-size:12px;z-index:100;bottom:18px;position:absolute;text-align:center;width:95px;height:14px;background-color:#ff254b;right:18px;color:white">Must Watch Now</div>-->
+
+
+</div>
+<div id="box">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="1" cols="1" class="grid" style="margin:12px;"><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,&#39;https://www.voot.com/shows/bigg-boss-s11/11/538936/arshi-the-oomph-queen/541443&#39;)" style="height:280px">
+		  <div style="position:relative;margin-top:43px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_0_image_1516245925.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:5px;text-align:left;position:absolute;top:178px">Arshi, the oomph queen</div>
+		  </div>
+		</div>
+		
+	</div></div>
+		<div style="pointer-events:none;font-size:16px;z-index:100;top:14px;position:absolute;text-align:center;width:270px;left:34px;color:black">Bigg Boss S11 - Trending</div>
+		
+		<!--<div style="pointer-events:none;font-size:12px;z-index:100;bottom:18px;position:absolute;text-align:center;width:95px;height:14px;background-color:#ff254b;right:18px;color:white">Must Watch Now</div>-->
+
+
+</div>
+
+<script type="text/javascript">
+    
+    var json = {"adtag":"1885a1c9","bcamp":"content","browser":"notset","btag":"notset","campaign":"none","cid":"2119","click_macro":"https://googleads.g.doubleclick.net/dbm/clk?sa=L\u0026ai=CyaDUJUJxWpTrJseJ8gXZ2o-ICeeQ8JxQ65fo-K0Grr_Z69QIEAEgvO6HGmDl-uaDvA6gAaHYg5EDyAEJqQIRiCzbTOFQPqgDAaoEygFP0IDQvmeeJBO2cogf0LzjuWO8xSsVg-dR26mp2XRZ1Dmom5uBztXVODNW7v51o8KYkqbpH-QwZBLDcGl405YmzMD4drucAQdI60AW6xGtP72auL5oFmFz-YobFkQTA80aYTw4rnG4YMh9j2nBLozvXRBg_wFG6uepkICRsGNxl_4m6o_ieX0ZknwMyfWPf554MrsK-PjSVR1SaL9ADPymyHYU6b8PHfoCOpYchuhD49qHJ0IIFZrGV5qHdkTZmR9ajm2nA_L0yROW4AQDkAYBoAZNgAfHp_xuqAemvhvYBwDSCAcIgGEQARgCgAoB2BMQ\u0026num=1\u0026cid=CAASEuRo3C1cdODHOaDt830_wh4oMg\u0026sig=AOD64_1NQUnHiHWdIByJ1i4Y1uzIbgEySg\u0026client=ca-pub-5750766974376423\u0026dbm_c=AKAmf-BxGk5lBVp4e21Zb51UIv50lpyi22gLfVZrBUHnWPUgRMX3bCEI8YStvA00m1i55ZLcVMd9\u0026dbm_d=AKAmf-CL6Th8xCZDz4x-dGfs2HzzGleM8ruC3jHrMYOgyL_g7eoLCLlqIF1Vf_ii1IGwmiBcdTsO9k32PnfZ6eTxku6aAfQ-QEQ_XmKvUdwYjeR4kDzpFcqZxWxSFT_W_Z7BSs7KXbZkE4Q6OKBdQq_pf4iYhBGPm9XE-wKFxRp13MzKA8D3AvW1QNSVibnR5bdxD7sAt9LeUdkqrNI4BxCkCnYL6aSncw\u0026adurl=","client":"voot","creativedata":"[{\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/bigg-boss-11-grand-finale/561780\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_0_image_1515987848.jpg\", \"heading\": \"Bigg Boss 11- Grand Finale\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/ahem-what-s-puneesh-doing-/543210\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_1_image_1516245925.jpg\", \"heading\": \"Ahem! What's Puneesh doing?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/arshi-the-oomph-queen/541443\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_0_image_1516245925.jpg\", \"heading\": \"Arshi, the oomph queen\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-102-shikas-is-back-/561140\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_3_image_1515987849.jpg\", \"heading\": \"Day 102: #Shikas is back!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/salman-performs-with-finalists-/561768\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_3_0_image_1516000593.jpg\", \"heading\": \"Salman performs with finalists!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/akash-s-interview/561969\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_2_0_image_1516078598.jpg\", \"heading\": \"Akash's interview\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-100-arshi-the-queen-of-mean/560509\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_5_image_1515987849.jpg\", \"heading\": \"Day 100: Arshi, the Queen of Mean\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/sapna-sets-the-stage-on-fire-/561800\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_11_0_image_1516040229hl-x.jpg\", \"heading\": \"Sapna sets the stage on fire!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/arhsi-s-oops-moment/548910\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_3_image_1516245925.jpg\", \"heading\": \"Arhsi's oops moment\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/and-the-winner-is-/561803\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_3_1_image_1516000593.jpg\", \"heading\": \"And the winner is...\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-103-vikas-makes-hina-cry-/561394\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_2_image_1515987849.jpg\", \"heading\": \"Day 103: Vikas makes Hina cry!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/best-season-ever-/561449\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_2_1_image_1516078599.jpg\", \"heading\": \"Best season ever?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/arshi-wants-a-massage-/550425\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_5_image_1516245925.jpg\", \"heading\": \"Arshi wants a massage!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/we-made-it-to-the-finale-/561688\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_4_1_image_1516011403.jpg\", \"heading\": \"We made it to the finale!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/shilpa-my-sister-/561608\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_4_0_image_1516011403.jpg\", \"heading\": \"Shilpa, my sister!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-104-emotional-recap-of-bb-journey/561611\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_1_image_1515987849.jpg\", \"heading\": \"Day 104: Emotional recap of BB journey\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/salman-meets-lady-dabangg/560006\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_11_3_image_1516040230.jpg\", \"heading\": \"Salman meets Lady Dabangg\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/hina-s-journey/561971\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_2_1_image_1516078243.jpg\", \"heading\": \"Hina's journey\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/what-s-benafsha-s-type-/540887\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_5_6_image_1516245925.jpg\", \"heading\": \"What's Benafsha's type?\"}]","device":"desktop","dimension":"336x280","domain":"notset","fcat":"content","hcid":"pretargeting","partner":"dbm","pdata":"{}","stats":"eyJhZHRhZyI6IjE4ODVhMWM5IiwiYmNhbXAiOiJjb250ZW50IiwiYnJvd3NlciI6Im5vdHNldCIsImJ0YWciOiJub3RzZXQiLCJjYW1wYWlnbiI6Im5vbmUiLCJjaWQiOiIyMTE5IiwiY2xpZW50Ijoidm9vdCIsImRldmljZSI6ImRlc2t0b3AiLCJkaW1lbnNpb24iOiIzMzZ4MjgwIiwiZG9tYWluIjoibm90c2V0IiwiZmNhdCI6ImNvbnRlbnQiLCJoY2lkIjoicHJldGFyZ2V0aW5nIiwicGFydG5lciI6ImRibSIsInRva2VuX2lkIjoiZjQxZWVhZTQ0N2EzY2JjN2U3NzNmNTg2ZjNkN2JiNGIifQ==","token_id":"f41eeae447a3cbc7e773f586f3d7bb4b","udata":"{}"};
+    var _items = JSON.parse(json['creativedata'])
+    function shuffle(array) {
+      if(!array.length) return [];
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+    Number.prototype.formatMoney = function(c, d, t){
+    var n = this, 
+        c = isNaN(c = Math.abs(c)) ? 2 : c, 
+        d = d == undefined ? "." : d, 
+        t = t == undefined ? "," : t, 
+        s = n < 0 ? "-" : "", 
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+        j = (j = i.length) > 3 ? j % 3 : 0;
+       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "").replace(".00","");
+     };
+    var listitems = ""
+    var creativedata = [];
+    try{
+        var creativedata = shuffle(JSON.parse(json['pdata'].replace(",]","]")))
+    }catch(e){
+        creativedata = [];
+    }
+    var staticdata = shuffle(_items);
+    for(var i=0;i<staticdata.length;i++){
+        creativedata.push(staticdata[i])
+    }
+    var finaldata = []
+    for(var i=0;i<creativedata.length;i++){
+        finaldata.push(creativedata[i])
+    }
+    creativedata = finaldata;
+    function format(str,data){
+  return str.replace(/\$\([^\)]*\)/g,function(m,n){
+    var key = m.substr(2,m.length-3)
+    return data[key]==undefined? m : data[key]
+  })
+}
+
+
+window.onAdData = function(data){
+  var newdata = []
+  for(var i in data['items']){
+      var obj = data['items'][i]
+      if(obj['image'].indexOf('mastHead')!=-1)continue;
+      obj['image'] = obj['image'].replace('w_218','w_480').replace('h_123','h_270')
+      newdata.push(obj)
+  }
+  data['items'] = newdata
+  
+  var template = document.getElementById("template")
+  var box = document.getElementById("box")
+  box.innerHTML = template.innerHTML
+  var repeats = document.querySelectorAll("#box [gdn-repeat]");
+  for(var i=0;i<repeats.length;i++){
+    var repeat = repeats[i];
+    var key = repeat.getAttribute("gdn-repeat")
+    var template = repeat.innerHTML;
+    var nrows = repeat.getAttribute("rows")
+    var ncols = repeat.getAttribute("cols")
+    if(data[key]){
+      var html = ""
+      for(var r=0;r<nrows;r++){
+          var row = ""
+          for(var c=0;c<ncols;c++){
+            var obj = {}
+            var index = (r*ncols+c)%data[key].length
+            for(var k in data[key][index]){
+              obj["self_"+k] = data[key][index][k];
+            }
+            row += format(template,obj)
+          }
+          html += `<div style='display:flex;justify-content:space-between'>`+row+`</div>`
+      }
+      repeat.innerHTML = html
+    }
+  }
+  box.innerHTML = format(box.innerHTML,data)
+}
+onAdData({items:creativedata})
+
+function openUrl(e,url){
+    e.preventDefault()
+    e.stopPropagation()
+    // url = url.split("?")[0]
+    if(url.indexOf('utm_source')==-1){
+        var token = "?"
+        if(url.indexOf('?')!=-1) token='&';
+        url += token+"utm_source=dbm&utm_medium=cpm&utm_campaign=hockeycurve_bigboss11_desktop"
+    }
+    if(window.location.href.indexOf('=mobile')!=-1){
+        url = url.replace('_desktop','_mobile')
+    }
+    var target = json['click_macro'];
+    if(target){
+        url = "https://ad.hockeycurve.com/clk.php?redirect="+encodeURIComponent(url)+"&tracking="+encodeURIComponent(target)+"&stats="+encodeURIComponent(json['stats'])+"&token_id="+encodeURIComponent(json['token_id']);
+    }
+    window.open(url,"_blank")
+}
+ window.onclick = function(event){
+     openUrl(event,"https://www.voot.com/shows/bigg-boss/bigg-boss-season-11")
+}
+var count = 0
+function anim(){
+    count += 1
+    if (count > 30)return;
+    var first = creativedata[0]
+    creativedata = creativedata.slice(1,creativedata.length)
+    creativedata.push(first)
+    onAdData({items:creativedata})
+    setTimeout(anim,3000)
+}
+anim()
+
+var trigger_iframe = function(src){
+    try{
+        var body = document.getElementsByTagName('body')[0];
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.style['display'] = 'none'
+        body.appendChild(iframe);
+    }
+    catch(e){exception(e)}
+}
+var ishover = false;
+var triggered = false;
+function triggerHover(){
+    if(ishover && !triggered && json['click_macro']){
+        triggered = true;
+        trigger_iframe("piggyback?redirect=hcid&token_id="+json["token_id"]);
+        trigger_iframe("hover?redirect=hcid&stats="+json["stats"]+"&token_id="+json["token_id"]);
+    }
+}
+window.addEventListener("mouseover",function(){
+    if(!ishover){
+        ishover = true;
+        setTimeout(triggerHover,2000)
+    }
+})
+window.addEventListener("mouseout",function(){
+    ishover = false;
+})
+
+
+console.log('popular')
+</script>
+<a target="_blank" href="http://hockeycurve.com/optout.html"><div style="font-size:10px;position:absolute;right:0px;top:0px;z-index:10000;cursor:pointer;">
+    <img src="./logo.png" title="optout">
+</div></a>
+</body></html>

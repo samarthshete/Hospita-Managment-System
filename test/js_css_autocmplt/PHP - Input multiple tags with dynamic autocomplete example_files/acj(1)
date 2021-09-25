@@ -1,0 +1,16 @@
+OX_mNCM_7901765001({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"https://delivery-asia-northeast-1.openx.net/{medium}/1.0/{rtype}?ph=6a16560a-f6c6-4851-b7b5-0b2c0190166a&ts={txn_state}",
+    "oxt": 33.416,
+    "adunits" : [
+      {
+        "auid":"539478203",
+        "chain_revenue":"",
+        "size":"600x250",
+        "chain":[
+        ]
+      }
+    ]
+  }
+});
